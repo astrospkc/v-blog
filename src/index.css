@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body#home {
+    background-image: "/images/white space.jpg";
+  }
+  body {
+    /* background-image: url("/images/bodyimage.jpg"); */
+    /* background: rgb(207, 241, 240);
+    background: radial-gradient(
+      circle,
+      rgba(207, 241, 240, 1) 0%,
+      rgba(2, 16, 52, 0.8771498771498771) 100%
+    ); */
+
+    font-family: "Ubuntu", sans-serif;
+  }
+}
+
+@layer utilities {
+  .card {
+    /* background-color: black; */
+    /* clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%); */
+    clip-path: polygon(
+      50% 0%,
+      90% 20%,
+      100% 60%,
+      75% 100%,
+      25% 100%,
+      0% 60%,
+      10% 20%
+    );
+  }
+  .cardHome {
+    background: rgb(159, 162, 178);
+    background: linear-gradient(
+      138deg,
+      rgba(159, 162, 178, 1) 0%,
+      rgba(219, 194, 207, 1) 100%
+    );
+  }
+  .singleline {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .multiline {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+}
