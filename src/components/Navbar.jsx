@@ -23,7 +23,7 @@ const Navbar = () => {
     <>
       <div className="flex justify-between items-center  mx-auto px-4 mb-10  w-full  z-10 ">
         <div className="  lg:flex lg:justify-between lg:items-center">
-          <div className="m-3 p-2 font-extrabold text-md md:text-xl text-cyan-800">
+          <div className="m-3 p-2 font-extrabold text-xs lg:text-xl text-cyan-800">
             <i className="fa-solid fa-blog"></i> V-Blog World
           </div>
         </div>
@@ -65,12 +65,12 @@ const Navbar = () => {
           </div>
 
           {!localStorage.getItem("token") ? (
-            <div className="">
-              <button className="  bg-gray-800 py-1 rounded-md text-sm lg:text-xl px-4 mx-2 hover:bg-blue-500 text-slate-200 ">
+            <div className="flex flex-row">
+              <button className="  bg-gray-800 py-1 rounded-md text-xs lg:text-xl px-4 mx-2 hover:bg-blue-500 text-slate-200 ">
                 <Link to="/signIn">Login</Link>
               </button>
-              <button className="  bg-gray-800 py-1 rounded-md text-sm lg:text-xl px-4 mx-2 hover:bg-blue-500 text-slate-200 ">
-                <Link to="/signUp">Sign up</Link>
+              <button className="  bg-gray-800 py-1 rounded-md text-xs lg:text-xl px-4 mx-2 hover:bg-blue-500 text-slate-200 ">
+                <Link to="/signUp">SignUp</Link>
               </button>
             </div>
           ) : (
