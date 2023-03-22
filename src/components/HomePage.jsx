@@ -55,7 +55,7 @@ const HomePage = () => {
         <Navbar />
         {/* blurred section */}
 
-        <div className="backdrop-blur-lg m-auto w-1/2 p-9">
+        <div className="backdrop-blur-lg m-auto w-2/3 p-9">
           <h1 className="text-white text-center font-bold text-4xl mb-20">
             Welcome to V-Blog World
           </h1>
