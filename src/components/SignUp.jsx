@@ -60,9 +60,9 @@ const SignUp = () => {
       >
         <Navbar />
 
-        <div className="m-auto backdrop-blur-lg w-1/2 p-3 lg:p-9">
+        <div className="m-auto backdrop-blur-lg  p-3 lg:p-9">
           <h1 className="text-3xl text-center">SignUp</h1>
-          <form className=" w-1/2 flex flex-col  " onSubmit={handleSubmit}>
+          <form className="  flex flex-col  " onSubmit={handleSubmit}>
             <label htmlFor="fname" className="text-white mb-2 ">
               Name:
             </label>

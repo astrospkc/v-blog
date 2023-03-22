@@ -52,11 +52,11 @@ const SignIn = () => {
         }}
       >
         <Navbar />
-        <div className=" m-auto backdrop-blur-lg w-1/2  p-9">
+        <div className=" m-auto backdrop-blur-lg   p-9">
           <h1 className="text-3xl font-bold text-slate-500 text-center">
             Login
           </h1>
-          <form className=" w-96 flex flex-col " onSubmit={handleSubmit}>
+          <form className="  flex flex-col " onSubmit={handleSubmit}>
             <label htmlFor="email" className="text-white font-semibold my-5">
               Email Address:
             </label>
