@@ -60,7 +60,7 @@ const SignUp = () => {
       >
         <Navbar />
 
-        <div className="m-auto backdrop-blur-lg  p-9">
+        <div className="m-auto backdrop-blur-lg w-1/2 p-9">
           <h1 className="text-3xl text-center">SignUp</h1>
           <form className=" w-96 flex flex-col  " onSubmit={handleSubmit}>
             <label htmlFor="fname" className="text-white mb-2 ">

@@ -52,7 +52,7 @@ const SignIn = () => {
         }}
       >
         <Navbar />
-        <div className=" m-auto backdrop-blur-lg  p-9">
+        <div className=" m-auto backdrop-blur-lg w-1/2  p-9">
           <h1 className="text-3xl font-bold text-slate-500 text-center">
             Login
           </h1>
