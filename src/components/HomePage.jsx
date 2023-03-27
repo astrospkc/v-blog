@@ -56,7 +56,7 @@ const HomePage = () => {
         {/* blurred section */}
 
         <div className="backdrop-blur-lg m-auto w-2/3 p-9">
-          <h1 className="text-white text-center font-bold text-4xl mb-20">
+          <h1 className="text-white text-center font-bold text-xl md:text-4xl mb-20">
             Welcome to V-Blog World
           </h1>
           <p className="text-black font-semibold text-left m-auto mb-2">
@@ -70,8 +70,12 @@ const HomePage = () => {
           </p>
 
           <div className="my-4">
-            <input type="text" className="h-12 w-1/2" placeholder="Search" />
-            <button className="bg-blue-500 h-12 m-2 px-1 rounded-lg hover:bg-slate-500">
+            <input
+              type="text"
+              className="h-12 w-1/2 px-2 rounded-lg"
+              placeholder="Search"
+            />
+            <button className="bg-blue-500 h-12 m-2 px-2 rounded-lg hover:bg-slate-500">
               Search
             </button>
           </div>
