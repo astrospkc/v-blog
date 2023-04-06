@@ -21,7 +21,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="flex justify-between items-center  mx-auto px-4 mb-10  w-full  z-10 ">
+      <div className="flex justify-between items-center  mx-auto px-4   w-full  z-10 ">
         <div className="  lg:flex lg:justify-between lg:items-center">
           <div className="m-3 p-2 font-extrabold text-xs lg:text-xl text-cyan-800">
             <i className="fa-solid fa-blog"></i> V-Blog World
