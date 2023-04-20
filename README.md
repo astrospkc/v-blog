@@ -1,6 +1,8 @@
 # v-blog #
 
-![Screenshot](https://vercel.com/4441b7dc-9c3e-4025-b871-10c92c3ac61a)
+This is a blogging website where any user can add their blog after logging in  to the site . Any blog written in their account will be displayed in homescreen. A user will have the access to edit and delete their own blog.
+
+![Screenshot](images/blogshot.png)
 
 ## [What I learned?]##
 [NPm]
