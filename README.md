@@ -6,10 +6,10 @@
 
 -[Reactjs](https://react.dev/)
  [commands]-
- 1.[npm create vite@latest projectname]
- 2.[ cd projectname]
- 3. [npm install]
- 4.[npm run dev]
+ [npm create vite@latest projectname]
+ [ cd projectname]
+  [npm install]
+ [npm run dev]
  
 -[Tailwind Css](https://tailwindcss.com/)
   [commands]-
