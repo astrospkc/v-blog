@@ -1,6 +1,6 @@
 # v-blog #
 
-![Screenshot](https://vercel.com/4441b7dc-9c3e-4025-b871-10c92c3ac61a)
+![Screenshot](images/blogshot.png)
 
 ## [What I learned?]##
 [NPm]
