@@ -2,7 +2,18 @@
 
 This is a blogging website where any user can add their blog after logging in  to the site . Any blog written in their account will be displayed in homescreen. A user will have the access to edit and delete their own blog.
 
+## The main page ##
 ![Screenshot](images/blogshot.png)
+
+## MyBlog page ##
+![](images/myblog.png)
+## SignUp page ##
+![](images/signup.png)
+## Log in ##
+![](images/login.png)
+## Read more section in card ##
+![](images/readmore.png)
+
 
 ## [What I learned?]##
 [NPm]
