@@ -1,5 +1,7 @@
 # v-blog #
 
+This is a blogging website where any user can add their blog after logging in  to the site . Any blog written in their account will be displayed in homescreen. A user will have the access to edit and delete their own blog.
+
 ![Screenshot](images/blogshot.png)
 
 ## [What I learned?]##
