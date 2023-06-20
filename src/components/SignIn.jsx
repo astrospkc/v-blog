@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
 
 import { url } from "../config/config";
 
@@ -42,20 +43,15 @@ const SignIn = () => {
       <div
         className="flex flex-col"
         style={{
-          // backgroundImage: `url(${mountainImage})`,
-          // backgroundColor: "black",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
           minHeight: "100vh",
-          backdropFilter: blur(),
         }}
       >
         <Navbar />
-        <div className=" m-auto backdrop-blur-lg   p-9">
-          <h1 className="text-3xl font-bold text-slate-500 text-center">
-            Login
-          </h1>
+        <div
+          className=" m-auto backdrop-blur-lg   p-9 rounded-xl shadow-lg shadow-black"
+          style={{ backgroundColor: "#3F4E4F" }}
+        >
+          <h1 className="text-3xl font-bold text-white text-center">Login</h1>
           <form className="  flex flex-col " onSubmit={handleSubmit}>
             <label htmlFor="email" className="text-white font-semibold my-5">
               Email Address:
@@ -102,6 +98,12 @@ const SignIn = () => {
             >
               Submit
             </button>
+            <h1 className="text-white">
+              Don't have an account? Signup by clicking{" "}
+              <span className="bg-white text-black font-semibold p-1">
+                <Link to="/">SignUp</Link>
+              </span>
+            </h1>
           </form>
           <div className="text-white"></div>
         </div>

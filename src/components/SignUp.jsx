@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import forest from "./forest.jpg";
 import Footer from "./Footer";
 import { url } from "../config/config";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const [credentials, setCredentials] = useState({
@@ -47,21 +48,12 @@ const SignUp = () => {
 
   return (
     <>
-      <div
-        className="flex flex-col"
-        style={{
-          backgroundImage: `url(${forest})`,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          minHeight: "100vh",
-          backdropFilter: blur(),
-        }}
-      >
-        <Navbar />
-
-        <div className="m-auto backdrop-blur-lg  p-3 lg:p-9">
-          <h1 className="text-3xl text-center">SignUp</h1>
+      <div className="">
+        <div
+          className="m-20 backdrop-blur-lg  p-3 lg:p-9 shadow-lg shadow-black rounded-xl text-xs md:text-lg"
+          style={{ backgroundColor: "#3F4E4F" }}
+        >
+          <h1 className="text-3xl text-center text-white ">SignUp</h1>
           <form className="  flex flex-col  " onSubmit={handleSubmit}>
             <label htmlFor="fname" className="text-white mb-2 ">
               Name:
@@ -122,9 +114,14 @@ const SignUp = () => {
             >
               Submit
             </button>
+            <h1 className="text-white">
+              Already have an account? Login by clicking{" "}
+              <span className="bg-white text-black font-semibold p-1">
+                <Link to="/signIn">Login</Link>
+              </span>
+            </h1>
           </form>
         </div>
-        <Footer />
       </div>
     </>
   );

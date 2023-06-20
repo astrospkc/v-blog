@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Geologica:wght@300&family=Josefin+Sans&family=Nunito&family=Poltawski+Nowy&family=Roboto+Mono&family=Vina+Sans&family=Ysabeau:wght@300&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -16,8 +16,9 @@
       rgba(207, 241, 240, 1) 0%,
       rgba(2, 16, 52, 0.8771498771498771) 100%
     ); */
+    background-color: #2c3639;
 
-    font-family: "Ubuntu", sans-serif;
+    font-family: "Ysabeau";
   }
 }
 

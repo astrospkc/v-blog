@@ -21,78 +21,80 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="flex justify-between items-center  mx-auto px-4   w-full  z-10 ">
-        <div className="  lg:flex lg:justify-between lg:items-center">
-          <div className="m-3 p-2 font-extrabold text-xs lg:text-xl text-cyan-800">
-            <i className="fa-solid fa-blog"></i> V-Blog World
+      <div className="flex flex-col">
+        <div className="  text-center ">
+          <div className="m-3 p-2 font-extrabold text-xs md:text-xl text-cyan-800 bg-white rounded-full ">
+            <i className="fa-solid fa-blog"></i> V-Blog
           </div>
         </div>
-
-        <div>
-          <ul
-            className={
-              toggleMenu
-                ? "absolute min-h-screen lg:min-h-0  right-0 top-16 lg:top-0 bottom-0 lg:static lg:flex lg:flex-row  lg:items-center lg:gap-12 gap-6 px-2 "
-                : "hidden " +
-                  " min-h-[60vh] lg:min-h-0  right-0 top-[4.5rem] lg:top-0 bottom-0 lg:static lg:flex lg:flex-row  lg:items-center lg:gap-12 gap-6 px-2 "
-            }
-          >
-            <li className=" text-black  text-sm  hover:text-yellow-300 lg:text-xl bg-slate-400 shadow-md shadow-black rounded-lg px-2">
-              <Link className="" to="/">
-                Home
-              </Link>
-            </li>
-            <li className=" text-black  text-sm  hover:text-yellow-300 lg:text-xl bg-slate-400 shadow-md shadow-black rounded-lg px-2">
-              <Link to="/about">About</Link>
-            </li>
-            <li className=" text-black  text-sm  hover:text-yellow-300 lg:text-xl bg-slate-400 shadow-md shadow-black rounded-lg px-2">
-              <Link to="/blog">My Blog</Link>
-            </li>
-            {/* <li className=" text-white font-sans text-sm  hover:text-yellow-300 lg:text-xl ">
-              <Link to="/vlog"> Vlog</Link>
-            </li>
-            <li className=" text-white font-sans text-sm  hover:text-yellow-300 lg:text-xl ">
-              <Link to="/photography"> Photography</Link>
-            </li> */}
-          </ul>
-        </div>
-        <div className="flex flex-row lg:items-center font-bold">
-          <div className=" text-white font-sans text-sm  hover:text-yellow-300 lg:text-xl ">
-            <Link to="/blog/add">
-              {" "}
-              <button className="bg-cyan-800 px-2 rounded-lg">AddBlog</button>
-            </Link>
-          </div>
-
-          {!localStorage.getItem("token") ? (
-            <div className="flex flex-row">
-              <button className="  bg-gray-800 py-1 rounded-md text-xs lg:text-xl px-4 mx-2 hover:bg-blue-500 text-slate-200 ">
-                <Link to="/signIn">Login</Link>
-              </button>
-              <button className="  bg-gray-800 py-1 rounded-md text-xs lg:text-xl px-4 mx-2 hover:bg-blue-500 text-slate-200 ">
-                <Link to="/signUp">SignUp</Link>
-              </button>
-            </div>
-          ) : (
-            <button
-              onClick={handleLogOut}
-              className="  bg-gray-800 py-1 rounded-md text-sm lg:text-xl px-4 mx-2 hover:bg-blue-500 text-slate-200 "
-            >
-              Logout
-            </button>
-          )}
-          <div className="lg:hidden justify-self-start" onClick={handleToggle}>
+        <div
+          className="flex flex-col h-0 md:h-screen justify-between items-center  mx-auto px-4   w-full  z-10 shadow-lg shadow-black relative "
+          md:style={{ backgroundColor: "#20262E" }}
+        >
+          {/* making navbar to one side and blogs to one side */}
+          <div className="md:hidden justify-self-start" onClick={handleToggle}>
             {!toggleMenu && (
-              <div className="lg:hidden text-white">
-                <BsList className="text-white" />
+              <div className="md:hidden  text-white">
+                <BsList className="text-black rounded-full bg-yellow-600 " />
               </div>
             )}
 
             {toggleMenu && (
-              <div className="lg:hidden text-white">
-                <BsXLg />
+              <div className="md:hidden  text-white">
+                <BsXLg className="text-black rounded-full bg-yellow-600 " />
               </div>
             )}
+          </div>
+
+          <div>
+            <ul
+              className={
+                toggleMenu
+                  ? " md:min-h-0  left-0  md:flex md:flex-col  md:items-center md:gap-12  px-2 bg-black md:bg-transparent rounded-lg"
+                  : "hidden " +
+                    "  md:min-h-0  left-0   md:flex md:flex-col md:items-center md:gap-12  px-2 bg-black md:bg-transparent rounded-lg"
+              }
+            >
+              <li className="  text-sm  hover:text-yellow-300 md:text-xl text-white shadow-md shadow-black rounded-lg px-2">
+                <Link className="" to="/home">
+                  Home
+                </Link>
+              </li>
+              <li className=" text-white text-sm  hover:text-yellow-300 md:text-xl  shadow-md shadow-black rounded-lg px-2">
+                <Link to="/about">About</Link>
+              </li>
+              <li className=" text-white text-sm  hover:text-yellow-300 md:text-xl  shadow-md shadow-black rounded-lg px-2">
+                <Link to="/blog">My Blog</Link>
+              </li>
+              <li>
+                <div className="flex flex-col md:flex-col md:items-center font-bold">
+                  <div className=" text-white font-sans text-sm  hover:text-yellow-300 md:text-xl ">
+                    <Link to="/blog/add">
+                      {" "}
+                      <li className="text-white px-2 rounded-lg">AddBlog</li>
+                    </Link>
+                  </div>
+
+                  {!localStorage.getItem("token") ? (
+                    <div className="flex flex-col md:flex-col">
+                      <li className="  bg-gray-800 py-1 rounded-md text-xs md:text-xl px-4 m-2 hover:bg-blue-500 text-slate-200 ">
+                        <Link to="/">Login</Link>
+                      </li>
+                      <li className="  bg-gray-800 py-1 rounded-md text-xs md:text-xl px-4 m-2 hover:bg-blue-500 text-slate-200 ">
+                        <Link to="/">SignUp</Link>
+                      </li>
+                    </div>
+                  ) : (
+                    <li
+                      onClick={handleLogOut}
+                      className="  bg-gray-800 py-1 rounded-md text-sm md:text-xl px-4 mx-2 hover:bg-blue-500 text-slate-200 "
+                    >
+                      Logout
+                    </li>
+                  )}
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

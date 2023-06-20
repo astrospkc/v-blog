@@ -41,69 +41,67 @@ const HomePage = () => {
 
   return (
     <>
-      <div>
-        <Navbar />
+      <div className="flex flex-row">
+        <div className="flex flex-col">
+          <div className="flex flex-col  shadow-xl shadow-gray-800 ">
+            {/* blurred section */}
 
-        <div
-          className="flex flex-col shadow-xl shadow-gray-800 "
-          style={{
-            backgroundImage: `url(${Image})`,
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            // minHeight: "50vh",
-            backdropFilter: blur(),
-          }}
-        >
-          {/* blurred section */}
-
-          <div className="backdrop-blur-lg m-auto w-2/3 p-9">
-            <h1 className="text-white text-center font-bold text-xl md:text-4xl mb-20">
-              Welcome to V-Blog World
-            </h1>
-            <p className="text-black font-semibold text-left m-auto mb-2">
-              Write your thoughts
-            </p>
-            <p
-              style={{ fontFamily: "Ubuntu" }}
-              className="text-white font-semibold mb-4"
+            <div
+              className=" m-auto w-2/3 p-9"
+              style={{
+                backgroundImage: `url(${Image})`,
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+              }}
             >
-              Be Creative...
-            </p>
+              <h1 className="text-white text-center font-bold text-xl md:text-4xl mb-20">
+                Welcome to V-Blog World
+              </h1>
+              <p className="text-black font-semibold text-left m-auto mb-2">
+                Write your thoughts
+              </p>
+              <p
+                style={{ fontFamily: "Ubuntu" }}
+                className="text-white font-semibold mb-4"
+              >
+                Be Creative...
+              </p>
 
-            <div className="my-4">
-              <input
-                type="text"
-                className="h-12 w-1/2 px-2 rounded-lg"
-                placeholder="Search"
-              />
-              <button className="bg-blue-500 h-12 m-2 px-2 rounded-lg hover:bg-slate-500">
-                Search
-              </button>
+              <div className="my-4">
+                <input
+                  type="text"
+                  className="h-12 w-1/2 px-2 rounded-lg"
+                  placeholder="Search"
+                />
+                <button className="bg-blue-500 h-12 m-2 px-2 rounded-lg hover:bg-slate-500">
+                  Search
+                </button>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* start of the added notes */}
-        <div className="">
-          {notes && notes.length === 0 ? (
-            <div className="text-white">No notes to display</div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-8 py-3 my-5 mx-14">
-              {notes &&
-                notes.map((note) => {
-                  return (
-                    <HomeCard
-                      key={note._id}
-                      note={note}
-                      setShowOnlyModal={setShowOnlyModal}
-                      updateNote={updateNote}
-                    />
-                  );
-                })}
-              {/* <Card /> */}
-            </div>
-          )}
+          {/* start of the added notes */}
+          <div className="">
+            {notes && notes.length === 0 ? (
+              <div className="text-white">No notes to display</div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-8 py-3 my-5 mx-14">
+                {notes &&
+                  notes.map((note) => {
+                    return (
+                      <HomeCard
+                        key={note._id}
+                        note={note}
+                        setShowOnlyModal={setShowOnlyModal}
+                        updateNote={updateNote}
+                      />
+                    );
+                  })}
+                {/* <Card /> */}
+              </div>
+            )}
+          </div>
         </div>
       </div>
       {/* </div> */}
