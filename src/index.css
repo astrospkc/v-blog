@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Geologica:wght@300&family=Josefin+Sans&family=Nunito&family=Poltawski+Nowy&family=Roboto+Mono&family=Vina+Sans&family=Ysabeau:wght@300&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Dosis:wght@500&family=Geologica:wght@300&family=Josefin+Sans&family=Nunito&family=Poltawski+Nowy&family=Roboto+Mono&family=Vina+Sans&family=Ysabeau:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Black+Ops+One&family=Dosis:wght@500&family=Geologica:wght@300&family=Josefin+Sans&family=Nunito&family=Poltawski+Nowy&family=Roboto+Mono&family=Vina+Sans&family=Ysabeau:wght@300&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -23,6 +26,9 @@
 }
 
 @layer utilities {
+  .textfont {
+    font-family: "Black Ops One";
+  }
   .card {
     /* background-color: black; */
     /* clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%); */
@@ -37,12 +43,13 @@
     );
   }
   .cardHome {
-    background: rgb(159, 162, 178);
+    /* background: rgb(159, 162, 178);
     background: linear-gradient(
       138deg,
       rgba(159, 162, 178, 1) 0%,
       rgba(219, 194, 207, 1) 100%
-    );
+    ); */
+    background-color: #dcd7c9;
   }
   .singleline {
     display: -webkit-box;

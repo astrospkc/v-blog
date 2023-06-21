@@ -32,11 +32,11 @@ const SignUp = () => {
       }
     );
     const jsonResponse = response.data;
-    // console.log(jsonResponse);
+    console.log(jsonResponse);
     if (jsonResponse.success) {
       //save the auth token
       localStorage.setItem("token", jsonResponse.authtoken);
-      navigate("/");
+      navigate("/home");
     } else {
       alert("Invalid credentials");
     }

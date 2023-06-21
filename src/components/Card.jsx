@@ -37,8 +37,8 @@ const Card = (props) => {
             <div className=" mx-5 my-5 p-3 flex flex-col items-center justify-center ">
               <div className="">
                 <h1
-                  style={{ fontFamily: "Ubuntu" }}
-                  className="singleline text-3xl  font-semibold font-serif mb-3 cursor-pointer"
+                  // style={{ fontFamily: "Ubuntu" }}
+                  className="singleline text-3xl   font-semibold font-serif mb-3 cursor-pointer text-black"
                 >
                   {note.title}
                 </h1>

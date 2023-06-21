@@ -22,8 +22,7 @@ const AddBlog = () => {
   };
   return (
     <>
-      <Navbar />
-      <div className=" w-full bg-zinc-700 h-screen flex flex-col">
+      <div className=" w-full  h-screen flex flex-col">
         <h1 className="text-white text-center font-bold text-2xl py-2">
           Your Content
         </h1>
@@ -50,7 +49,7 @@ const AddBlog = () => {
           <div className="flex flex-row mb-5">
             <button
               onClick={handleClick}
-              className="flex w-20 text-sm transform justify-center rounded-2xl border-b-4 border-gray-500 bg-gray-400 px-3 py-1 text-gray-100 transition  duration-200 ease-in-out hover:translate-y-px hover:border-b-2 "
+              className="flex w-20 transform justify-center rounded-2xl border-b-4 border-gray-500 bg-gray-400 px-3 py-1  text-lg font-bold transition  duration-200 ease-in-out hover:translate-y-px hover:border-b-2 "
             >
               Add
             </button>

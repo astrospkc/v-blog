@@ -28,7 +28,7 @@ const HomeCard = (props) => {
               <div className="">
                 <h1
                   style={{ fontFamily: "Ubuntu" }}
-                  className="singleline text-2xl text-cyan-100 font-bold mb-3 mx-4  overflow-hidden"
+                  className="singleline text-2xl font-bold mb-3 mx-4  overflow-hidden"
                 >
                   {note.title}
                 </h1>

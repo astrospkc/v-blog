@@ -24,11 +24,11 @@ const SignIn = () => {
       }),
     });
     const jsonResponse = await response.json();
-    // console.log(jsonResponse);
+    console.log(jsonResponse);
     if (jsonResponse.success) {
       //save the auth token
       localStorage.setItem("token", jsonResponse.authtoken);
-      navigate("/");
+      navigate("/home");
     } else {
       alert("Invalid credentials");
     }
@@ -46,7 +46,6 @@ const SignIn = () => {
           minHeight: "100vh",
         }}
       >
-        <Navbar />
         <div
           className=" m-auto backdrop-blur-lg   p-9 rounded-xl shadow-lg shadow-black"
           style={{ backgroundColor: "#3F4E4F" }}

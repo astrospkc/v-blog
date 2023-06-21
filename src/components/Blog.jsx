@@ -64,15 +64,18 @@ const Blog = (props) => {
   return (
     <>
       <div>
-        <Navbar />
-
         <div>
           {/* <Category /> */}
 
           {/* start of the added notes */}
           <div className="">
             {notes && notes.length === 0 ? (
-              <div className="text-white">No notes to display</div>
+              <div className="text-white text-center m-8 text-xl md:text-2xl">
+                No notes to display. Write something of your own. click on{" "}
+                <button className="border-r-2 border-l-2  px-2 rounded-full border-black text-yellow-500 hover:cursor-pointer">
+                  <Link to="/blog/add">Add Blog</Link>
+                </button>
+              </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-8 py-3 my-5 md:mx-20">
                 {notes &&
@@ -93,7 +96,7 @@ const Blog = (props) => {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
 
       {/* show modal and update it */}
       {showModal && (

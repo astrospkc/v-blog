@@ -43,7 +43,7 @@ const HomePage = () => {
     <>
       <div className="flex flex-row">
         <div className="flex flex-col">
-          <div className="flex flex-col  shadow-xl shadow-gray-800 ">
+          <div className="flex flex-col   ">
             {/* blurred section */}
 
             <div
@@ -55,28 +55,33 @@ const HomePage = () => {
                 backgroundSize: "cover",
               }}
             >
-              <h1 className="text-white text-center font-bold text-xl md:text-4xl mb-20">
-                Welcome to V-Blog World
-              </h1>
-              <p className="text-black font-semibold text-left m-auto mb-2">
-                Write your thoughts
-              </p>
-              <p
-                style={{ fontFamily: "Ubuntu" }}
-                className="text-white font-semibold mb-4"
-              >
-                Be Creative...
-              </p>
+              <div className="backdrop-blur-md">
+                <h1
+                  className="textfont text-center font-bold text-2xl md:text-5xl mb-20"
+                  style={{ color: "#A27B5C" }}
+                >
+                  Lets write something better
+                </h1>
+                <p className="text-black font-semibold text-left m-auto mb-2">
+                  Write your thoughts
+                </p>
+                <p
+                  style={{ fontFamily: "Ubuntu" }}
+                  className="text-white font-semibold mb-4"
+                >
+                  Be Creative...
+                </p>
 
-              <div className="my-4">
-                <input
-                  type="text"
-                  className="h-12 w-1/2 px-2 rounded-lg"
-                  placeholder="Search"
-                />
-                <button className="bg-blue-500 h-12 m-2 px-2 rounded-lg hover:bg-slate-500">
-                  Search
-                </button>
+                <div className="my-4">
+                  <input
+                    type="text"
+                    className="h-12 w-1/2 px-2 rounded-lg"
+                    placeholder="Search"
+                  />
+                  <button className="bg-blue-500 h-12 m-2 px-2 rounded-lg hover:bg-slate-500">
+                    Search
+                  </button>
+                </div>
               </div>
             </div>
           </div>
