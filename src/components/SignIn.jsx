@@ -29,6 +29,8 @@ const SignIn = () => {
       //save the auth token
       localStorage.setItem("token", jsonResponse.authtoken);
       navigate("/home");
+
+      console.log("why there is no /home");
     } else {
       alert("Invalid credentials");
     }

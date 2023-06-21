@@ -94,20 +94,7 @@ const SignUp = () => {
               minLength={5}
               required
             />
-            {/* <label htmlFor="cpassword" className="text-white mt-4">
-              Confirm Password:
-            </label>
 
-            <input
-              type="text"
-              id="cPassword"
-              name="cPassword"
-              onChange={handleChange}
-              value={credentials.password}
-              className="h-8 rounded-lg outline-none bg-transparent border-b-2 border-white text-white px-3"
-              // minLength={5}
-              // required
-            /> */}
             <button
               type="submit"
               className="text-black bg-cyan-500 m-3 rounded-lg p-1 hover:bg-blue-400 "
@@ -128,11 +115,3 @@ const SignUp = () => {
 };
 
 export default SignUp;
-
-// import React from "react";
-
-// const SignUp = () => {
-//   return <div className="text-white">SignUp</div>;
-// };
-
-// export default SignUp;

@@ -15,7 +15,7 @@ const StartPage = () => {
     <>
       <div className="flex flex-col  md:flex-row ">
         <div
-          className="container flex flex-col md:w-[50%] md:border-r-2 shadow-lg shadow-black"
+          className="container flex flex-col w-full md:w-[50%] md:border-r-2 shadow-lg shadow-black"
           // style={{
           //   backgroundImage: `url(${forest})`,
           //   backgroundSize: "cover",

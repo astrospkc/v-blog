@@ -21,7 +21,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="flex flex-col">
+      <div className="flex flex-col z-10">
         <div className="  text-center ">
           <div className="m-3 p-2 font-extrabold text-xs md:text-xl text-cyan-800 bg-white rounded-full ">
             <i className="fa-solid fa-blog"></i> V-Blog
@@ -50,20 +50,18 @@ const Navbar = () => {
             <ul
               className={
                 toggleMenu
-                  ? " md:min-h-0  left-0  md:flex md:flex-col  md:items-center md:gap-12  px-2 bg-black md:bg-transparent rounded-lg"
+                  ? " md:min-h-0  left-0  md:flex md:flex-col  md:items-center  md:gap-10 px-2 bg-black md:bg-transparent rounded-lg"
                   : "hidden " +
-                    "  md:min-h-0  left-0   md:flex md:flex-col md:items-center md:gap-12  px-2 bg-black md:bg-transparent "
+                    "  md:min-h-0  left-0   md:flex md:flex-col md:items-center  md:gap-10  px-2 bg-black md:bg-transparent "
               }
             >
-              <li className="  text-sm  hover:text-yellow-300 md:text-xl text-white shadow-md shadow-black rounded-lg px-2">
-                <Link className="" to="/home">
-                  Home
-                </Link>
+              <li className="  text-sm  hover:text-yellow-300 md:text-xl text-white mb-3 md:shadow-md md:shadow-black rounded-lg px-2">
+                <Link to="/home">Home</Link>
               </li>
-              <li className=" text-white text-sm  hover:text-yellow-300 md:text-xl  shadow-md shadow-black rounded-lg px-2">
+              <li className=" text-white text-sm  hover:text-yellow-300 md:text-xl mb-3  md:shadow-md md:shadow-black rounded-lg px-2">
                 <Link to="/about">About</Link>
               </li>
-              <li className=" text-white text-sm  hover:text-yellow-300 md:text-xl  shadow-md shadow-black rounded-lg px-2">
+              <li className=" text-white text-sm  hover:text-yellow-300 md:text-xl mb-3 md:shadow-md md:shadow-black rounded-lg px-2">
                 <Link to="/blog">My Blog</Link>
               </li>
               <li>
@@ -71,7 +69,7 @@ const Navbar = () => {
                   <div className="  ">
                     <Link to="/blog/add">
                       {" "}
-                      <li className="text-white text-sm  hover:text-yellow-300 md:text-xl  shadow-md shadow-black rounded-lg px-2 md:mb-12">
+                      <li className="text-white text-sm  hover:text-yellow-300 md:text-xl mb-3 md:shadow-md md:shadow-black rounded-lg px-2 md:mb-12">
                         AddBlog
                       </li>
                     </Link>
@@ -79,17 +77,17 @@ const Navbar = () => {
 
                   {!localStorage.getItem("token") ? (
                     <div className="flex flex-col md:flex-col">
-                      <li className="  text-white text-sm  hover:text-yellow-300 md:text-xl  shadow-md shadow-black rounded-lg px-2 ">
+                      <li className="  text-white text-sm  hover:text-yellow-300 md:text-xl mb-3 md:shadow-md md:shadow-black rounded-lg px-2 md:mb-12 ">
                         <Link to="/">Login</Link>
                       </li>
-                      <li className="  text-white text-sm  hover:text-yellow-300 md:text-xl  shadow-md shadow-black rounded-lg px-2 ">
+                      <li className="  text-white text-sm  hover:text-yellow-300 md:text-xl mb-3 md:shadow-md md:shadow-black rounded-lg px-2 ">
                         <Link to="/">SignUp</Link>
                       </li>
                     </div>
                   ) : (
                     <li
                       onClick={handleLogOut}
-                      className="  text-white text-sm  hover:text-yellow-300 md:text-xl  shadow-md shadow-black rounded-lg px-2 "
+                      className="  text-white text-sm  hover:text-yellow-300 md:text-xl mb-3 md:shadow-md md:shadow-black rounded-lg px-2 "
                     >
                       Logout
                     </li>

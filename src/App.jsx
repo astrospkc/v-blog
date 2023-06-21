@@ -18,7 +18,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<StartPage />} />
         </Routes>
-        <div className="flex flex-row min-h-screen md:relative ">
+        <div className="flex flex-row  md:relative ">
           <div className="flex relative md:fixed md:w-[10%] ">
             <Navbar />
           </div>
