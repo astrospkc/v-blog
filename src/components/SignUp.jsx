@@ -9,10 +9,9 @@ import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const [credentials, setCredentials] = useState({
-    name: "",
-    email: "",
-    password: "",
-    cPassword: "",
+    name: "member1",
+    email: "member@gmail.com",
+    password: "member",
   });
   const navigate = useNavigate();
 

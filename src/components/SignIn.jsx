@@ -7,7 +7,10 @@ import { Link } from "react-router-dom";
 import { url } from "../config/config";
 
 const SignIn = () => {
-  const [credentials, setCredentials] = useState({ email: "", password: "" });
+  const [credentials, setCredentials] = useState({
+    email: "member@gmail.com",
+    password: "member",
+  });
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
