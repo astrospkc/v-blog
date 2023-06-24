@@ -11,6 +11,7 @@ import About from "./components/About";
 import AddBlog from "./components/AddBlog";
 import HomePage from "./components/HomePage";
 import StartPage from "./components/StartPage";
+import ShowModal from "./components/ShowModal";
 const App = () => {
   return (
     <NoteState>
@@ -29,6 +30,7 @@ const App = () => {
               <Route path="/about" element={<About />} />
               <Route path="/signIn" element={<SignIn />} />
               <Route path="/signUp" element={<SignUp />} />
+              <Route path="/read" element={<ShowModal />} />
 
               <Route path="/blog/add" element={<AddBlog />} />
             </Routes>

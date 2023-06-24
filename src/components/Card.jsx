@@ -26,7 +26,7 @@ const Card = (props) => {
             className=" flex flex-col shadow-lg h-fit shadow-black rounded-lg  "
             style={{
               // backgroundImage: `url(${white_space})`,
-              backgroundColor: "#dbc2cf",
+              backgroundColor: "#A27B5C",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
@@ -45,34 +45,31 @@ const Card = (props) => {
               </div>
               <hr className="border-black" />
               <div className=" ">
-                <p className="multiline desc text-[#003566] overflow-ellipsis overflow-hidden">
+                <p className="multiline desc text-white overflow-ellipsis overflow-hidden">
                   {note.description}
                 </p>
-                <div
+                <button
                   onClick={() => {
                     setShowOnlyModal(true);
                     updateNote(note);
                   }}
+                  style={{ backgroundColor: "#3F4E4F", color: "white" }}
+                  className="p-1 rounded-xl mt-3"
                 >
-                  <a
-                    href=""
-                    className=" text-slate-800 hover:text-blue-500 underline decoration-sky-500"
-                  >
-                    Read more
-                  </a>
-                </div>
+                  read more
+                </button>
               </div>
 
-              <div className="flex flex-row-reverse gap-3 mt-9 text-[20px]  ">
+              <div className="flex flex-row gap-3 mt-4 text-[20px] items-center ">
                 <FiTrash2
-                  className="  text-[#3c7a89]  hover:cursor-pointer hover:text-[#9fa2b2]"
+                  className="  text-[#1a3339] hover:cursor-pointer hover:text-[#9fa2b2]"
                   onClick={() => {
                     deleteNote(note._id);
                   }}
                 />
 
                 <BsFillPenFill
-                  className="  text-[#3c7a89] hover:cursor-pointer hover:text-[#9fa2b2]"
+                  className="  text-[#1a3339] hover:cursor-pointer hover:text-[#9fa2b2]"
                   // onClick={() => {
                   //   // updateNote(note);
                   //   closeModal

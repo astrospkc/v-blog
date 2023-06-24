@@ -7,6 +7,14 @@ const MAX_LENGTH = 100;
 const HomeCard = (props) => {
   //   const { deleteNote } = useContext(NoteContext);
   const { note, updateNote, setShowOnlyModal } = props;
+  console.log("title", note.title);
+
+  // const targetRef = useRef(null);
+
+  // const scrollToTarget = () => {
+  //   targetRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+  // };
+
   // console.log(note.title);
   return (
     <>
@@ -39,19 +47,18 @@ const HomeCard = (props) => {
                 <p className="multiline desc text-[#2e4756] overflow-ellipsis overflow-hidden">
                   {note.description}
                 </p>
-                <div
+
+                <button
                   onClick={() => {
                     setShowOnlyModal(true);
+
                     updateNote(note);
                   }}
+                  style={{ backgroundColor: "#3F4E4F", color: "white" }}
+                  className="p-1 rounded-xl"
                 >
-                  <a
-                    href=""
-                    className=" text-slate-800 hover:text-blue-500 underline decoration-sky-500"
-                  >
-                    Read more
-                  </a>
-                </div>
+                  Read More
+                </button>
               </div>
             </div>
           </div>

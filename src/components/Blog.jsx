@@ -47,7 +47,7 @@ const Blog = (props) => {
     if (localStorage.getItem("token")) {
       getNotes();
     } else {
-      navigate("/signin");
+      navigate("/signIn");
     }
   }, []);
 
@@ -64,133 +64,131 @@ const Blog = (props) => {
   return (
     <>
       <div>
-        <div>
-          {/* <Category /> */}
+        {/* {!showModal && !showOnlyModal && ( */}
+        <div className="ml-16 md:ml-4 relative overflow-scroll">
+          <div>
+            {/* <Category /> */}
 
-          {/* start of the added notes */}
-          <div className="">
-            {notes && notes.length === 0 ? (
-              <div className="text-white text-center m-8 text-xl md:text-2xl">
-                No notes to display. Write something of your own. click on{" "}
-                <button className="border-r-2 border-l-2  px-2 rounded-full border-black text-yellow-500 hover:cursor-pointer">
-                  <Link to="/blog/add">Add Blog</Link>
-                </button>
-              </div>
-            ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-8 py-3 my-5 md:mx-20">
-                {notes &&
-                  notes.map((note) => {
-                    return (
-                      <Card
-                        key={note._id}
-                        note={note}
-                        setShowModal={setShowModal}
-                        setShowOnlyModal={setShowOnlyModal}
-                        updateNote={updateNote}
-                      />
-                    );
-                  })}
-                {/* <Card /> */}
-              </div>
-            )}
+            {/* start of the added notes */}
+            <div className="flex justify-center items-center">
+              {notes && notes.length === 0 ? (
+                <div className="text-white text-center m-8 text-xl md:text-2xl">
+                  No notes to display. Write something of your own. click on{" "}
+                  <button className="border-r-2 border-l-2  px-2 rounded-full border-black text-yellow-500 hover:cursor-pointer">
+                    <Link to="/blog/add">Add Blog</Link>
+                  </button>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-8 py-3 my-5 md:mx-20">
+                  {notes &&
+                    notes.map((note) => {
+                      return (
+                        <Card
+                          key={note._id}
+                          note={note}
+                          setShowModal={setShowModal}
+                          setShowOnlyModal={setShowOnlyModal}
+                          updateNote={updateNote}
+                        />
+                      );
+                    })}
+                  {/* <Card /> */}
+                </div>
+              )}
+            </div>
           </div>
         </div>
-      </div>
-      {/* <Footer /> */}
 
-      {/* show modal and update it */}
-      {showModal && (
-        <div
-          className="fixed w-full bg-zinc-700 h-screen flex flex-col"
-          ref={ref}
-        >
-          <h1 className="text-white text-center font-bold text-2xl py-2">
-            Your Content
-          </h1>
+        {/* )} */}
 
-          <div className=" flex flex-col gap-5  flex-grow mx-16">
-            <input
-              name="etitle"
-              id="etitle"
-              className="bg-zinc-800 text-zinc-300 p-3 rounded-full outline-none focus:shadow-xl "
-              placeholder="TITLE"
-              style={{ fontSize: 19 }}
-              onChange={handleChange}
-              value={note.etitle}
-            />
-            <textarea
-              name="edescription"
-              id="edescription"
-              className="bg-zinc-800 text-white p-3 rounded-md  outline-none flex-grow focus:shadow-xl "
-              placeholder="Description"
-              onChange={handleChange}
-              value={note.edescription}
-            ></textarea>
+        {/* <Footer /> */}
 
-            <div className="flex flex-row mb-5">
-              <button
-                onClick={handleClick}
-                className="flex w-20 text-sm transform justify-center rounded-2xl  bg-[#16262e] px-3 py-1 text-gray-100 transition  duration-200 ease-in-out hover:translate-y-px hover:border-b-2 "
-              >
-                Edit
-              </button>
-              {/* <button ref={refClose} className="bg-blue-600 text-black">
+        {/* show modal and update it */}
+        {showModal && (
+          <div className="absolute top-5 left-[50%]">
+            <div
+              className="fixed w-1/2  h-1/2 flex flex-col z-10 backdrop-blur-lg rounded-3xl"
+              style={{ backgroundColor: "#DCD7C9" }}
+              ref={ref}
+            >
+              <h1 className="text-black text-center font-bold text-2xl py-2">
+                Your Content
+              </h1>
+
+              <div className=" flex flex-col gap-5  flex-grow  mx-6  ">
+                <input
+                  name="etitle"
+                  id="etitle"
+                  className=" text-zinc-300 p-3 rounded-full outline-none focus:shadow-xl "
+                  placeholder="TITLE"
+                  style={{ fontSize: 19, backgroundColor: "#3F4E4F" }}
+                  onChange={handleChange}
+                  value={note.etitle}
+                />
+                <textarea
+                  name="edescription"
+                  id="edescription"
+                  className=" text-white p-3 rounded-md  outline-none flex-grow focus:shadow-xl "
+                  placeholder="Description"
+                  style={{ backgroundColor: "#3F4E4F" }}
+                  onChange={handleChange}
+                  value={note.edescription}
+                ></textarea>
+
+                <div className="flex flex-row mb-5">
+                  <button
+                    onClick={handleClick}
+                    className="flex w-20 text-sm transform justify-center rounded-2xl  bg-[#16262e] px-3 py-1 text-gray-100 transition  duration-200 ease-in-out hover:translate-y-px hover:border-b-2 "
+                  >
+                    Edit
+                  </button>
+                  {/* <button ref={refClose} className="bg-blue-600 text-black">
             close
           </button> */}
 
-              <button
-                onClick={closeModal}
-                ref={refClose}
-                className="flex w-20 text-sm transform justify-center rounded-2xl   bg-[#16262e]  px-3 py-1 text-gray-100 transition  duration-200 ease-in-out hover:translate-y-px hover:border-b-2 "
-              >
-                close
-              </button>
+                  <button
+                    onClick={closeModal}
+                    ref={refClose}
+                    className="flex w-20 text-sm transform justify-center rounded-2xl   bg-[#16262e]  px-3 py-1 text-gray-100 transition  duration-200 ease-in-out hover:translate-y-px hover:border-b-2 "
+                  >
+                    close
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* show modal only --read ony */}
-      {showOnlyModal && (
-        <div
-          className="fixed w-full bg-zinc-700 h-screen flex flex-col"
-          ref={ref}
-        >
-          <h1 className="text-white text-center font-bold text-2xl py-2">
-            Edit Your Content
-          </h1>
-
-          <div className=" flex flex-col gap-5  flex-grow mx-16">
-            <input
-              name="etitle"
-              id="etitle"
-              className="bg-zinc-800 text-zinc-300 p-3 rounded-full outline-none focus:shadow-xl "
-              placeholder="TITLE"
-              style={{ fontSize: 19 }}
-              onChange={handleChange}
-              value={note.etitle}
-            />
-            <textarea
-              name="edescription"
-              id="edescription"
-              className="bg-zinc-800 text-white p-3 rounded-md  outline-none flex-grow focus:shadow-xl "
-              placeholder="Description"
-              onChange={handleChange}
-              value={note.edescription}
-            ></textarea>
-
-            <div className="flex flex-row mb-5">
-              <button
-                onClick={closeOnlyModal}
-                ref={refClose}
-                className="flex w-20 text-sm transform justify-center rounded-2xl hover:bg-gray-700 bg-[#16262e]  px-3 py-1 text-gray-100 transition  duration-200 ease-in-out hover:translate-y-px hover:border-b-2 "
+        {/* show modal only --read ony */}
+        {showOnlyModal && (
+          <div className=" absolute md:w-1/2  top-[10%] left-[30%]">
+            <div
+              className="flex w-full flex-col bg-zinc-700 h-fit rounded-3xl "
+              style={{ backgroundColor: "#3F4E4F" }}
+              ref={ref}
+            >
+              <div
+                className=" flex flex-col gap-5  flex-grow mx-16 mt-16 "
+                style={{ color: "#DCD7C9" }}
               >
-                close
-              </button>
+                <h1 className="font-bold text-xl text-center">{note.etitle}</h1>
+                <p className="text-xl">{note.edescription}</p>
+
+                <div className="flex flex-row mb-5">
+                  <button
+                    onClick={closeOnlyModal}
+                    ref={refClose}
+                    className="flex w-20 text-sm transform justify-center rounded-2xl hover:bg-gray-700 bg-[#16262e]  px-3 py-1 text-gray-100 transition  duration-200 ease-in-out hover:translate-y-px hover:border-b-2 "
+                  >
+                    close
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+        <Footer />
+      </div>
     </>
   );
 };

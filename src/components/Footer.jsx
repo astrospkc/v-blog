@@ -8,7 +8,10 @@ import { FaLinkedin } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className=" text-center mt-auto">
-      <ul className="py-3  gap-6 ml-2 cursor-pointer md:flex md:justify-center text:lg md:text-2xl text-[#16262e] ">
+      <ul
+        className="py-3  gap-6 ml-2 cursor-pointer md:flex md:justify-center text:lg md:text-2xl text-[#16262e] "
+        style={{ color: "#A27B5C" }}
+      >
         <li className=" hover:text-[#dbc2cf] flex gap-2 items-center">
           <FaGithubSquare />
           <h2 className="">Github</h2>

@@ -22,7 +22,7 @@ const AddBlog = () => {
   };
   return (
     <>
-      <div className=" w-full  h-screen flex flex-col">
+      <div className=" w-full  h-screen  flex flex-col">
         <h1 className="text-white text-center font-bold text-2xl py-2">
           Your Content
         </h1>

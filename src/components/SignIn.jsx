@@ -33,7 +33,7 @@ const SignIn = () => {
       localStorage.setItem("token", jsonResponse.authtoken);
       navigate("/home");
 
-      console.log("why there is no /home");
+      console.log("why there is  /home");
     } else {
       alert("Invalid credentials");
     }
