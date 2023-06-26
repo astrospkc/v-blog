@@ -63,9 +63,9 @@ const Blog = (props) => {
 
   return (
     <>
-      <div>
+      <div className="">
         {/* {!showModal && !showOnlyModal && ( */}
-        <div className="ml-16 md:ml-4 relative overflow-scroll">
+        <div className="ml-16 md:ml-4 mr-3 flex relative overflow-scroll justify-center items-center">
           <div>
             {/* <Category /> */}
 
@@ -105,9 +105,9 @@ const Blog = (props) => {
 
         {/* show modal and update it */}
         {showModal && (
-          <div className="absolute top-5 left-[50%]">
+          <div className="fixed top-[10%] m-2 ">
             <div
-              className="fixed w-1/2  h-1/2 flex flex-col z-10 backdrop-blur-lg rounded-3xl"
+              className=" fixed flex w-fit flex-col bg-zinc-700 h-1/2 rounded-3xl "
               style={{ backgroundColor: "#DCD7C9" }}
               ref={ref}
             >
@@ -161,9 +161,9 @@ const Blog = (props) => {
 
         {/* show modal only --read ony */}
         {showOnlyModal && (
-          <div className=" absolute md:w-1/2  top-[10%] left-[30%]">
+          <div className=" fixed w-fit top-[10%] h-fit  ">
             <div
-              className="flex w-full flex-col bg-zinc-700 h-fit rounded-3xl "
+              className=" fixed flex  flex-col bg-zinc-700 rounded-3xl  "
               style={{ backgroundColor: "#3F4E4F" }}
               ref={ref}
             >
@@ -172,7 +172,7 @@ const Blog = (props) => {
                 style={{ color: "#DCD7C9" }}
               >
                 <h1 className="font-bold text-xl text-center">{note.etitle}</h1>
-                <p className="text-xl">{note.edescription}</p>
+                <p className="text-sm md:text-lg">{note.edescription}</p>
 
                 <div className="flex flex-row mb-5">
                   <button
@@ -187,7 +187,9 @@ const Blog = (props) => {
             </div>
           </div>
         )}
-        <Footer />
+        <div className="fixed bottom-0 flex justify-center items-center mb-3">
+          <Footer />
+        </div>
       </div>
     </>
   );

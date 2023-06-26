@@ -68,7 +68,7 @@ const HomePage = () => {
               backgroundSize: "cover",
             }}
           >
-            <div className="backdrop-blur-md">
+            <div className="backdrop-blur-md p-2">
               <h1
                 className="textfont text-center font-bold text-2xl md:text-5xl mb-20"
                 style={{ color: "#A27B5C" }}
@@ -117,7 +117,7 @@ const HomePage = () => {
         </div>
 
         {showOnlyModal && (
-          <div className=" absolute md:w-1/2  top-[10%] left-[30%]">
+          <div className=" absolute w-fit  top-[10%] ">
             <div
               className="flex w-full flex-col bg-zinc-700 h-fit rounded-3xl "
               style={{ backgroundColor: "#3F4E4F" }}
@@ -128,7 +128,7 @@ const HomePage = () => {
                 style={{ color: "#DCD7C9" }}
               >
                 <h1 className="font-bold text-xl text-center">{note.title}</h1>
-                <p className="text-xl">{note.description}</p>
+                <p className="text-sm md:text-lg ">{note.description}</p>
 
                 <div className="flex flex-row mb-5">
                   <button

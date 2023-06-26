@@ -32,7 +32,8 @@ const Search = () => {
         placeholder="Search"
       />
       <button
-        className="bg-blue-500 h-12 m-2 px-2 rounded-lg hover:bg-slate-500"
+        className=" h-12 m-2 px-2 rounded-lg hover:bg-slate-500"
+        style={{ backgroundColor: "#A27B5C" }}
         // onClick={performSearch}
       >
         Search
