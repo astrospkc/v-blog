@@ -20,10 +20,10 @@ const App = () => {
           <Route path="/" element={<StartPage />} />
         </Routes>
         <div className="flex flex-row  md:relative ">
-          <div className="flex relative md:fixed md:w-[10%] ">
+          <div className="flex absolute md:fixed md:w-[10%] ">
             <Navbar />
           </div>
-          <div className="md:w-[87%] ml-auto absolute md:static">
+          <div className="md:w-[87%] ml-auto mr-2  md:static">
             <Routes>
               <Route path="/home" element={<HomePage />} />
               <Route path="/blog" element={<Blog />} />

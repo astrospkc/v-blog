@@ -161,7 +161,7 @@ const Blog = (props) => {
 
         {/* show modal only --read ony */}
         {showOnlyModal && (
-          <div className=" fixed w-fit top-[10%] h-fit  ">
+          <div id="content" className=" fixed w-fit top-[10%] h-fit  ">
             <div
               className=" fixed flex  flex-col bg-zinc-700 rounded-3xl  "
               style={{ backgroundColor: "#3F4E4F" }}

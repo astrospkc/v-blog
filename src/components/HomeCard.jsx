@@ -16,6 +16,13 @@ const HomeCard = (props) => {
   // };
 
   // console.log(note.title);
+  const handleButtonClick = () => {
+    setShowOnlyModal(true);
+
+    updateNote(note);
+    const contentElement = document.getElementById("content");
+    contentElement.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <>
       {/* <AddBlog /> */}
@@ -49,11 +56,7 @@ const HomeCard = (props) => {
                 </p>
 
                 <button
-                  onClick={() => {
-                    setShowOnlyModal(true);
-
-                    updateNote(note);
-                  }}
+                  onClick={handleButtonClick}
                   style={{ backgroundColor: "#3F4E4F", color: "white" }}
                   className="p-1 rounded-xl"
                 >

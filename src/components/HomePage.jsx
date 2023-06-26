@@ -97,7 +97,7 @@ const HomePage = () => {
                   No notes to display
                 </div>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-8 py-3 my-5 mx-14">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-8 py-3 justify-center items-center">
                   {notes &&
                     notes.map((note) => {
                       return (
