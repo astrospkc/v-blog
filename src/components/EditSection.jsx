@@ -40,6 +40,14 @@ const EditSection = () => {
     // navigate("/blog/edit");
   };
 
+  const updateNote = (note) => {
+    setNote({
+      _id: note._id,
+      etitle: note.title,
+      edescription: note.description,
+    });
+  };
+
   const handleChange = (e) => {
     setNote({ ...note, [e.target.name]: e.target.value });
   };
