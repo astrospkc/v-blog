@@ -96,13 +96,13 @@ const SignUp = () => {
 
             <button
               type="submit"
-              className="text-black bg-cyan-500 m-3 rounded-lg p-1 hover:bg-blue-400 "
+              className="text-black bg-cyan-500 m-3 rounded-full p-1 px-10 hover:bg-blue-400 w-fit mx-auto"
             >
               Submit
             </button>
             <h1 className="text-white">
               Already have an account? Login by clicking{" "}
-              <span className="bg-white text-black font-semibold p-1">
+              <span className="bg-white text-black font-semibold p-1 rounded-full px-3">
                 <Link to="/signIn">Login</Link>
               </span>
             </h1>

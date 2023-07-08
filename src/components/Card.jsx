@@ -8,13 +8,17 @@ import { FaFacebookSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import AddBlog from "./AddBlog";
 import { NoteContext } from "../context/NoteState";
+import { Link } from "react-router-dom";
 
 // import { IconContext } from "react-icons";
 const MAX_LENGTH = 100;
 
 const Card = (props) => {
   const { deleteNote } = useContext(NoteContext);
-  const { note, updateNote, setShowModal, setShowOnlyModal } = props;
+  const { note, updatenote, handlechange } = props;
+
+  console.log("note: ", note, note._id);
+
   // console.log(note.title);
   return (
     <>
@@ -48,15 +52,17 @@ const Card = (props) => {
                 <p className="multiline desc text-white overflow-ellipsis overflow-hidden">
                   {note.description}
                 </p>
+
                 <button
                   onClick={() => {
-                    setShowOnlyModal(true);
-                    updateNote(note);
+                    updatenote(note);
                   }}
                   style={{ backgroundColor: "#3F4E4F", color: "white" }}
                   className="p-1 rounded-xl mt-3"
                 >
-                  read more
+                  <Link to="/blog/read" state={{ note }}>
+                    read more
+                  </Link>
                 </button>
               </div>
 
@@ -67,29 +73,30 @@ const Card = (props) => {
                     deleteNote(note._id);
                   }}
                 />
-
-                <BsFillPenFill
-                  className="  text-[#1a3339] hover:cursor-pointer hover:text-[#9fa2b2]"
-                  // onClick={() => {
-                  //   // updateNote(note);
-                  //   closeModal
-                  // }}
+                <button
                   onClick={() => {
-                    setShowModal(true);
-                    updateNote(note);
+                    updatenote(note);
                   }}
-                />
+                  className="flex flex-row items-center border-2 border-gray-700 rounded-full px-1"
+                  style={{ backgroundColor: "#3F4E4F", color: "white" }}
+                >
+                  <BsFillPenFill className="text-sm" />
+                  <Link to="/blog/edit" state={{ note, updatenote }}>
+                    edit
+                  </Link>
+                </button>
+                {/* <Link to="/blog/edit" state={note}>
+                  <BsFillPenFill
+                    className="  text-[#1a3339] hover:cursor-pointer hover:text-[#9fa2b2]"
+                    onClick={() => {
+                      // setShowModal(true);
+                      updateNote(note);
+                    }}
+                  />
+                </Link> */}
               </div>
             </div>
           </div>
-          {/* right section */}
-
-          {/* <div className="text-white flex flex-col gap-6 ml-2 cursor-pointer text-2xl mt-auto absolute lg:relative">
-            <FaGithubSquare />
-            <FaFacebookSquare />
-            <FaInstagramSquare />
-            <FaLinkedin />
-          </div> */}
         </div>
       </div>
     </>

@@ -22,6 +22,7 @@ const Blog = (props) => {
 
   const updateNote = (note) => {
     // ref.current.click();
+    // console.log("blog notes details: ", note._id, note.title, note.description);
     setNote({
       _id: note._id,
       etitle: note.title,
@@ -31,6 +32,7 @@ const Blog = (props) => {
     // console.log("note", note);
   };
   // console.log(updateNote(note));
+  // const updatenote = updateNote(note);
 
   const handleClick = (e) => {
     // console.log("updating note", note);
@@ -52,20 +54,23 @@ const Blog = (props) => {
   }, []);
 
   // show Modal and edit modal
-  const [showModal, setShowModal] = useState(false);
-  const closeModal = () => setShowModal(false);
+  // const [showModal, setShowModal] = useState(false);
+  // const closeModal = () => setShowModal(false);
 
   // show modal only
-  const [showOnlyModal, setShowOnlyModal] = useState(false);
-  const closeOnlyModal = () => {
-    setShowOnlyModal(false);
-  };
+  // const [showOnlyModal, setShowOnlyModal] = useState(false);
+  // const closeOnlyModal = () => {
+  //   setShowOnlyModal(false);
+  // };
 
   return (
     <>
-      <div className="">
+      <div className="relative">
         {/* {!showModal && !showOnlyModal && ( */}
-        <div className="ml-16 md:ml-4 mr-3 flex relative overflow-scroll justify-center items-center">
+        <div className="text-4xl   font-semibold font-serif text-center pt-8 text-white ">
+          MY BLOGS
+        </div>
+        <div className="ml-4 mr-3 flex relative justify-center items-center">
           <div>
             {/* <Category /> */}
 
@@ -81,14 +86,17 @@ const Blog = (props) => {
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-8 py-3 my-5 md:mx-20">
                   {notes &&
-                    notes.map((note) => {
+                    notes.map((e) => {
                       return (
                         <Card
-                          key={note._id}
-                          note={note}
-                          setShowModal={setShowModal}
-                          setShowOnlyModal={setShowOnlyModal}
+                          key={e._id}
+                          note={e}
                           updateNote={updateNote}
+                          // refe={ref}
+                          // refc={refClose}
+
+                          handlechange={handleChange}
+                          editnote={editNote}
                         />
                       );
                     })}
@@ -99,95 +107,7 @@ const Blog = (props) => {
           </div>
         </div>
 
-        {/* )} */}
-
-        {/* <Footer /> */}
-
-        {/* show modal and update it */}
-        {showModal && (
-          <div className="fixed top-[10%] m-2 ">
-            <div
-              className=" fixed flex w-fit flex-col bg-zinc-700 h-1/2 rounded-3xl "
-              style={{ backgroundColor: "#DCD7C9" }}
-              ref={ref}
-            >
-              <h1 className="text-black text-center font-bold text-2xl py-2">
-                Your Content
-              </h1>
-
-              <div className=" flex flex-col gap-5  flex-grow  mx-6  ">
-                <input
-                  name="etitle"
-                  id="etitle"
-                  className=" text-zinc-300 p-3 rounded-full outline-none focus:shadow-xl "
-                  placeholder="TITLE"
-                  style={{ fontSize: 19, backgroundColor: "#3F4E4F" }}
-                  onChange={handleChange}
-                  value={note.etitle}
-                />
-                <textarea
-                  name="edescription"
-                  id="edescription"
-                  className=" text-white p-3 rounded-md  outline-none flex-grow focus:shadow-xl "
-                  placeholder="Description"
-                  style={{ backgroundColor: "#3F4E4F" }}
-                  onChange={handleChange}
-                  value={note.edescription}
-                ></textarea>
-
-                <div className="flex flex-row mb-5">
-                  <button
-                    onClick={handleClick}
-                    className="flex w-20 text-sm transform justify-center rounded-2xl  bg-[#16262e] px-3 py-1 text-gray-100 transition  duration-200 ease-in-out hover:translate-y-px hover:border-b-2 "
-                  >
-                    Edit
-                  </button>
-                  {/* <button ref={refClose} className="bg-blue-600 text-black">
-            close
-          </button> */}
-
-                  <button
-                    onClick={closeModal}
-                    ref={refClose}
-                    className="flex w-20 text-sm transform justify-center rounded-2xl   bg-[#16262e]  px-3 py-1 text-gray-100 transition  duration-200 ease-in-out hover:translate-y-px hover:border-b-2 "
-                  >
-                    close
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* show modal only --read ony */}
-        {showOnlyModal && (
-          <div id="content" className=" fixed w-fit top-[10%] h-fit  ">
-            <div
-              className=" fixed flex  flex-col bg-zinc-700 rounded-3xl  "
-              style={{ backgroundColor: "#3F4E4F" }}
-              ref={ref}
-            >
-              <div
-                className=" flex flex-col gap-5  flex-grow mx-16 mt-16 "
-                style={{ color: "#DCD7C9" }}
-              >
-                <h1 className="font-bold text-xl text-center">{note.etitle}</h1>
-                <p className="text-sm md:text-lg">{note.edescription}</p>
-
-                <div className="flex flex-row mb-5">
-                  <button
-                    onClick={closeOnlyModal}
-                    ref={refClose}
-                    className="flex w-20 text-sm transform justify-center rounded-2xl hover:bg-gray-700 bg-[#16262e]  px-3 py-1 text-gray-100 transition  duration-200 ease-in-out hover:translate-y-px hover:border-b-2 "
-                  >
-                    close
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-        <div className="fixed bottom-0 flex justify-center items-center mb-3">
+        <div className=" mt-32">
           <Footer />
         </div>
       </div>

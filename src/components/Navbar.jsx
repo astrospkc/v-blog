@@ -24,7 +24,9 @@ const Navbar = () => {
       <div className="flex flex-col z-10">
         <div className="  text-center ">
           <div className="m-3 p-2 font-extrabold text-xs md:text-xl text-cyan-800 bg-white rounded-full ">
-            <i className="fa-solid fa-blog"></i> V-Blog
+            <Link to="/home">
+              <i className="fa-solid fa-blog"></i> V-Blog
+            </Link>
           </div>
         </div>
         <div

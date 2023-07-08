@@ -9,20 +9,13 @@ const HomeCard = (props) => {
   const { note, updateNote, setShowOnlyModal } = props;
   console.log("title", note.title);
 
-  // const targetRef = useRef(null);
+  // const handleButtonClick = () => {
+  //   setShowOnlyModal(true);
 
-  // const scrollToTarget = () => {
-  //   targetRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+  //   updateNote(note);
+  //   const contentElement = document.getElementById("content");
+  //   contentElement.scrollIntoView({ behavior: "smooth" });
   // };
-
-  // console.log(note.title);
-  const handleButtonClick = () => {
-    setShowOnlyModal(true);
-
-    updateNote(note);
-    const contentElement = document.getElementById("content");
-    contentElement.scrollIntoView({ behavior: "smooth" });
-  };
   return (
     <>
       {/* <AddBlog /> */}
@@ -56,11 +49,13 @@ const HomeCard = (props) => {
                 </p>
 
                 <button
-                  onClick={handleButtonClick}
+                  // onClick={handleButtonClick}
                   style={{ backgroundColor: "#3F4E4F", color: "white" }}
                   className="p-1 rounded-xl"
                 >
-                  Read More
+                  <Link to="/home/read" state={note}>
+                    read more
+                  </Link>
                 </button>
               </div>
             </div>

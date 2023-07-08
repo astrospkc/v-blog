@@ -56,7 +56,7 @@ const HomePage = () => {
     <>
       <div>
         {/* <div className="flex flex-row"> */}
-        <div className="flex flex-col   ">
+        <div className="flex flex-col md:ml-16  ">
           {/* blurred section */}
 
           <div
@@ -116,33 +116,6 @@ const HomePage = () => {
           </div>
         </div>
 
-        {showOnlyModal && (
-          <div className=" absolute w-fit  top-[10%] ">
-            <div
-              className="flex w-full flex-col bg-zinc-700 h-fit rounded-3xl "
-              style={{ backgroundColor: "#3F4E4F" }}
-              ref={ref}
-            >
-              <div
-                className=" flex flex-col gap-5  flex-grow mx-16 mt-16 "
-                style={{ color: "#DCD7C9" }}
-              >
-                <h1 className="font-bold text-xl text-center">{note.title}</h1>
-                <p className="text-sm md:text-lg ">{note.description}</p>
-
-                <div className="flex flex-row mb-5">
-                  <button
-                    onClick={closeOnlyModal}
-                    ref={refClose}
-                    className="flex w-20 text-sm transform justify-center rounded-2xl hover:bg-gray-700 bg-[#16262e]  px-3 py-1 text-gray-100 transition  duration-200 ease-in-out hover:translate-y-px hover:border-b-2 "
-                  >
-                    close
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
         <Footer />
       </div>
     </>
