@@ -14,30 +14,15 @@ const Blog = (props) => {
   const navigate = useNavigate();
 
   const { getNotes, editNote, notes } = useContext(NoteContext);
-  // console.log("notes length", notes.length);
-  // console.log({ notes });
-  const ref = useRef(null);
-  const refClose = useRef(null);
+
   const [note, setNote] = useState({ _id: " ", etitle: "", edescription: "" });
 
   const updateNote = (note) => {
-    // ref.current.click();
-    // console.log("blog notes details: ", note._id, note.title, note.description);
     setNote({
       _id: note._id,
       etitle: note.title,
       edescription: note.description,
     });
-    // setNote(note);
-    // console.log("note", note);
-  };
-  // console.log(updateNote(note));
-  // const updatenote = updateNote(note);
-
-  const handleClick = (e) => {
-    // console.log("updating note", note);
-    editNote(note._id, note.etitle, note.edescription);
-    refClose.current.click();
   };
 
   const handleChange = (e) => {
@@ -53,20 +38,9 @@ const Blog = (props) => {
     }
   }, []);
 
-  // show Modal and edit modal
-  // const [showModal, setShowModal] = useState(false);
-  // const closeModal = () => setShowModal(false);
-
-  // show modal only
-  // const [showOnlyModal, setShowOnlyModal] = useState(false);
-  // const closeOnlyModal = () => {
-  //   setShowOnlyModal(false);
-  // };
-
   return (
     <>
       <div className="relative">
-        {/* {!showModal && !showOnlyModal && ( */}
         <div className="text-4xl   font-semibold font-serif text-center pt-8 text-white ">
           MY BLOGS
         </div>
@@ -92,9 +66,6 @@ const Blog = (props) => {
                           key={e._id}
                           note={e}
                           updateNote={updateNote}
-                          // refe={ref}
-                          // refc={refClose}
-
                           handlechange={handleChange}
                           editnote={editNote}
                         />

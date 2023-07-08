@@ -1,12 +1,7 @@
 import React, { useContext } from "react";
 import { FiTrash2 } from "react-icons/fi";
 import { BsFillPenFill } from "react-icons/bs";
-import { FaGithubSquare } from "react-icons/fa";
-import { FaInstagramSquare } from "react-icons/fa";
 
-import { FaFacebookSquare } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import AddBlog from "./AddBlog";
 import { NoteContext } from "../context/NoteState";
 import { Link } from "react-router-dom";
 
@@ -81,19 +76,10 @@ const Card = (props) => {
                   style={{ backgroundColor: "#3F4E4F", color: "white" }}
                 >
                   <BsFillPenFill className="text-sm" />
-                  <Link to="/blog/edit" state={{ note, updatenote }}>
+                  <Link to="/blog/edit" state={{ note }}>
                     edit
                   </Link>
                 </button>
-                {/* <Link to="/blog/edit" state={note}>
-                  <BsFillPenFill
-                    className="  text-[#1a3339] hover:cursor-pointer hover:text-[#9fa2b2]"
-                    onClick={() => {
-                      // setShowModal(true);
-                      updateNote(note);
-                    }}
-                  />
-                </Link> */}
               </div>
             </div>
           </div>

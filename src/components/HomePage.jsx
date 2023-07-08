@@ -6,15 +6,14 @@ import { NoteContext } from "../context/NoteState";
 import HomeCard from "./HomeCard";
 import { url } from "../config/config";
 import Search from "./Search";
-import ShowModal from "./ShowModal";
+
 import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const { getAllNotes, notes } = useContext(NoteContext);
   // console.log("notes length", notes.length);
   // console.log({ notes });
-  const ref = useRef(null);
-  const refClose = useRef(null);
+
   const [note, setNote] = useState({ title: "", description: "" });
 
   const updateNote = (note) => {
@@ -37,16 +36,16 @@ const HomePage = () => {
     getAllNotes();
   }, []);
 
-  // show modal only
-  const [showOnlyModal, setShowOnlyModal] = useState(false);
-  // console.log("try", setShowOnlyModal());
-  const closeOnlyModal = () => {
-    setShowOnlyModal(false);
-  };
+  // // show modal only
+  // const [showOnlyModal, setShowOnlyModal] = useState(false);
+  // // console.log("try", setShowOnlyModal());
+  // const closeOnlyModal = () => {
+  //   setShowOnlyModal(false);
+  // };
 
-  useEffect(() => {
-    console.log("showOnlyModal", showOnlyModal);
-  }, [showOnlyModal]);
+  // useEffect(() => {
+  //   console.log("showOnlyModal", showOnlyModal);
+  // }, [showOnlyModal]);
 
   // for search
 
@@ -85,7 +84,7 @@ const HomePage = () => {
                 Be Creative...
               </p>
 
-              <Search title={note.title} />
+              {/* <Search title={note.title} /> */}
             </div>
           </div>
 
@@ -104,7 +103,7 @@ const HomePage = () => {
                         <HomeCard
                           key={note._id}
                           note={note}
-                          setShowOnlyModal={setShowOnlyModal}
+                          // setShowOnlyModal={setShowOnlyModal}
                           updateNote={updateNote}
                         />
                       );

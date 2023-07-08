@@ -14,19 +14,7 @@ const StartPage = () => {
   return (
     <>
       <div className="flex flex-col  md:flex-row ">
-        <div
-          className="container flex flex-col w-full md:w-[50%] md:border-r-2 shadow-lg shadow-black"
-          // style={{
-          //   backgroundImage: `url(${forest})`,
-          //   backgroundSize: "cover",
-          //   backgroundRepeat: "no-repeat",
-          //   backgroundPosition: "center",
-          //   minHeight: "100vh",
-          //   backdropFilter: blur(),
-
-          //   opacity: "0.4",
-          // }}
-        >
+        <div className="container flex flex-col w-full md:w-[50%] md:border-r-2 shadow-lg shadow-black">
           <img
             src={forest}
             className="object-cover  w-screen h-screen md:w-full overflow-hidden relative "
@@ -38,7 +26,7 @@ const StartPage = () => {
             className="flex justify-center items-center md:m-auto absolute left-[30%] md:left-0 top-0 m-4 "
             style={{ minHeight: "100vh" }}
           >
-            <h1 className="text-white text-center text-4xl sm:text-3xl md:text-9xl font-bold">
+            <h1 className="text-white text-center text-4xl sm:text-3xl md:text-8xl font-bold">
               BLOG
             </h1>
 
@@ -61,11 +49,3 @@ const StartPage = () => {
 };
 
 export default StartPage;
-
-// import React from "react";
-
-// const SignUp = () => {
-//   return <div className="text-white">SignUp</div>;
-// };
-
-// export default SignUp;

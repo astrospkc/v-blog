@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Navbar from "./Navbar";
-import forest from "./forest.jpg";
-import Footer from "./Footer";
+
 import { url } from "../config/config";
 import { Link } from "react-router-dom";
 
@@ -102,7 +100,7 @@ const SignUp = () => {
             </button>
             <h1 className="text-white">
               Already have an account? Login by clicking{" "}
-              <span className="bg-white text-black font-semibold p-1 rounded-full px-3">
+              <span className="bg-white text-black font-semibold pb-1 rounded-full px-3">
                 <Link to="/signIn">Login</Link>
               </span>
             </h1>

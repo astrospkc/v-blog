@@ -81,21 +81,7 @@ const SignIn = () => {
               onChange={handleChange}
               className="h-8 rounded-lg outline-none bg-transparent border-b-2 border-white text-white px-3"
             />
-            {/* <label
-              htmlFor="cpassword"
-              className="text-white font-semibold my-5"
-            >
-              Confirm Password:
-            </label>
 
-            <input
-              type="text"
-              id="cpassword"
-              name="password"
-              value={credentials.password}
-              onChange={handleChange}
-              className="h-8 rounded-lg outline-none bg-transparent border-b-2 border-white text-white px-3"
-            /> */}
             <button
               type="submit"
               className="text-white bg-[#3c7a89] m-3 rounded-full px-4 p-1 hover:bg-blue-400 w-fit mx-auto"

@@ -1,21 +1,10 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
-// import { IconContext } from "react-icons";
-const MAX_LENGTH = 100;
-
 const HomeCard = (props) => {
-  //   const { deleteNote } = useContext(NoteContext);
-  const { note, updateNote, setShowOnlyModal } = props;
+  const { note } = props;
   console.log("title", note.title);
 
-  // const handleButtonClick = () => {
-  //   setShowOnlyModal(true);
-
-  //   updateNote(note);
-  //   const contentElement = document.getElementById("content");
-  //   contentElement.scrollIntoView({ behavior: "smooth" });
-  // };
   return (
     <>
       {/* <AddBlog /> */}
@@ -53,21 +42,13 @@ const HomeCard = (props) => {
                   style={{ backgroundColor: "#3F4E4F", color: "white" }}
                   className="p-1 rounded-xl"
                 >
-                  <Link to="/home/read" state={note}>
+                  <Link to="/home/read" state={{ note }}>
                     read more
                   </Link>
                 </button>
               </div>
             </div>
           </div>
-          {/* right section */}
-
-          {/* <div className="text-white flex flex-col gap-6 ml-2 cursor-pointer text-2xl mt-auto absolute lg:relative">
-            <FaGithubSquare />
-            <FaFacebookSquare />
-            <FaInstagramSquare />
-            <FaLinkedin />
-          </div> */}
         </div>
       </div>
     </>

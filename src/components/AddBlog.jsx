@@ -22,28 +22,33 @@ const AddBlog = () => {
   };
   return (
     <>
-      <div className=" w-full  h-screen  flex flex-col">
+      <div className=" h-screen  flex flex-col justify-center items-center w-full  mt-20">
         <h1 className="text-white text-center font-bold text-2xl py-2">
           Your Content
         </h1>
 
-        <div className=" flex flex-col gap-5  flex-grow mx-16">
+        <div className=" flex flex-col gap-5 flex-grow mx-5 ml-5 px-5  w-full md:px-16">
           <input
             name="title"
             id="title"
             className="bg-zinc-800 text-zinc-300 p-3 rounded-full outline-none focus:shadow-xl "
             placeholder="TITLE"
-            style={{ fontSize: 19 }}
+            style={{
+              backgroundColor: "#61876E",
+              fontSize: 19,
+              color: "black",
+            }}
             onChange={handleChange}
-            value={note.title}
+            value={note?.title || ""}
           />
           <textarea
             name="description"
             id="description"
             className="bg-zinc-800 text-white p-3 rounded-md  outline-none flex-grow focus:shadow-xl "
+            style={{ backgroundColor: "#61876E", color: "black" }}
             placeholder="Description"
             onChange={handleChange}
-            value={note.description}
+            value={note?.description || ""}
           ></textarea>
 
           <div className="flex flex-row mb-5">
