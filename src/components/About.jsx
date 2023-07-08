@@ -16,11 +16,11 @@ const About = () => {
             itself and for others too. It helps other person to know the things
             that they didn't know before, it helps the blogger to improve their
             writing and share their knowledge for others to use them. I
-            personally feel that even their are so many articles to read about
+            personally feel that even there are so many articles to read about
             certain topics, there are always a good blogger whose blog
             clearifies so many things and it actually inspires other person to
             write or understand in some way or other. So feel free to share your
-            understanding about certain topics or just share about you day.
+            understanding about certain topics or just share about your day.
           </p>
           {/* <h3>Next, What's the use of this?</h3>
         <p>The main use is that a person can</p> */}
