@@ -12,7 +12,7 @@ const ReadBlog = () => {
   return (
     <>
       <div
-        className="justify-center items-center py-10 mx-10  "
+        className="flex justify-center items-center py-10 mx-10 m-auto border-t-2 border-gray-400 rounded-3xl w-fit  "
         style={{ color: "#A27B5C" }}
       >
         <div className="flex flex-col">
@@ -34,7 +34,7 @@ const ReadBlog = () => {
               </button>
             ) : (
               <button className="text-center text-lg font-bold mb-4 bg-orange-200 rounded-full px-2">
-                <Link to="/blog">Go Back</Link>
+                <Link to="/">Go Back</Link>
               </button>
             )}
           </div>

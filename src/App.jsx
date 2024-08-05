@@ -15,33 +15,37 @@ import StartPage from "./components/StartPage";
 import ReadBlog from "./components/ReadBlog";
 
 import EditSection from "./components/EditSection";
+import Navbar1 from "./components/Navbar1";
+
 const App = () => {
+  // const location = useLocation();
+
   return (
     <NoteState>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<StartPage />} />
-        </Routes>
-        <div className="flex flex-row  md:relative ">
-          <div className="flex absolute md:fixed w-fit md:w-[10%] z-10 ">
-            <Navbar />
+        {/* <Routes>
+          <Route path="/start" element={<StartPage />} />
+        </Routes> */}
+        <div className="flex flex-col bg-gradient-to-r from-indigo-950 to-black min-h-screen">
+          <div className="flex-none top-0 h-fit w-full">
+            <Navbar1 />
           </div>
-          <div className=" w-[100%] md:w-[90%] md:ml-auto mr-2  ">
+          <div className="flex-grow">
             <Routes>
-              <Route path="/home" element={<HomePage />} />
+              <Route path="/" element={<HomePage />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/read" element={<ReadBlog />} />
-              <Route path="/home/read" element={<ReadBlog />} />
+              <Route path="/read" element={<ReadBlog />} />
               <Route path="/blog/edit" element={<EditSection />} />
-
               <Route path="/about" element={<About />} />
               <Route path="/signIn" element={<SignIn />} />
               <Route path="/signUp" element={<SignUp />} />
-
               <Route path="/blog/add" element={<AddBlog />} />
             </Routes>
           </div>
-          {/* <Footer /> */}
+          <div className="flex bottom-0 h-fit justify-center items-center bg-black shadow-lg shadow-gray-700">
+            <Footer />
+          </div>
         </div>
       </BrowserRouter>
     </NoteState>

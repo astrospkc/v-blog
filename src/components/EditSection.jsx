@@ -52,7 +52,7 @@ const EditSection = () => {
 
   return (
     <>
-      <div className="   h-screen  flex flex-col justify-center items-center w-full  mt-20">
+      <div className="   h-screen  flex flex-col justify-center items-center w-full  ">
         <h1 className="text-white text-center font-bold text-2xl py-2">
           Your Content
         </h1>
@@ -64,8 +64,8 @@ const EditSection = () => {
           <input
             name="title"
             id="title"
-            className="bg-zinc-800 text-zinc-300 p-2 rounded-full outline-none focus:shadow-xl "
-            style={{ backgroundColor: "#61876E", fontSize: 19 }}
+            className="bg-zinc-800 text-zinc-300 p-2 rounded-full focus:shadow-xl focus:border-2 border-gray-800  "
+            style={{ fontSize: 19 }}
             placeholder="TITLE"
             onChange={handleChange}
             value={note?.title || ""}
@@ -74,8 +74,7 @@ const EditSection = () => {
           <textarea
             name="description"
             id="description"
-            className="bg-zinc-800 text-white p-2 rounded-md  outline-none flex-grow focus:shadow-xl "
-            style={{ backgroundColor: "#61876E" }}
+            className="bg-zinc-800 text-white p-2 rounded-md  flex-grow focus:shadow-xl  focus:border-2 border-gray-800 "
             placeholder="Description"
             onChange={handleChange}
             value={note?.description || ""}
@@ -98,7 +97,6 @@ const EditSection = () => {
         </div>
       </div>
       ;
-      <Footer />
     </>
   );
 };

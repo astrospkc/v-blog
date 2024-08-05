@@ -14,7 +14,7 @@ const AddBlog = () => {
     // console.log(note);
     addNote(note.title, note.description);
     setNote({ title: "", description: "" });
-    navigate("/blog");
+    navigate("/");
   };
 
   const handleChange = (e) => {
@@ -22,7 +22,7 @@ const AddBlog = () => {
   };
   return (
     <>
-      <div className=" h-screen  flex flex-col justify-center items-center w-full  mt-20">
+      <div className=" h-full  flex flex-col justify-center items-center w-full   bg-transparent">
         <h1 className="text-white text-center font-bold text-2xl py-2">
           Your Content
         </h1>
@@ -31,12 +31,12 @@ const AddBlog = () => {
           <input
             name="title"
             id="title"
-            className="bg-zinc-800 text-zinc-300 p-3 rounded-full outline-none focus:shadow-xl "
+            className=" text-zinc-300 p-3 rounded-full outline-none focus:shadow-xl bg-black focus:border-2 border-gray-500 "
             placeholder="TITLE"
             style={{
-              backgroundColor: "#61876E",
+              // backgroundColor: "#61876E",
               fontSize: 19,
-              color: "black",
+              color: "white",
             }}
             onChange={handleChange}
             value={note?.title || ""}
@@ -44,8 +44,8 @@ const AddBlog = () => {
           <textarea
             name="description"
             id="description"
-            className="bg-zinc-800 text-white p-3 rounded-md  outline-none flex-grow focus:shadow-xl "
-            style={{ backgroundColor: "#61876E", color: "black" }}
+            className="bg-zinc-800 text-white p-3 rounded-md  outline-none flex-grow focus:shadow-xl  focus:border-2 border-gray-500 "
+            // style={{ backgroundColor: "#61876E", color: "black" }}
             placeholder="Description"
             onChange={handleChange}
             value={note?.description || ""}
@@ -61,8 +61,7 @@ const AddBlog = () => {
           </div>
         </div>
       </div>
-      ;
-      <Footer />
+      ;{/* <Footer /> */}
     </>
   );
 };

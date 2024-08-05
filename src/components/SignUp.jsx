@@ -7,33 +7,33 @@ import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const [credentials, setCredentials] = useState({
-    name: "member1",
-    email: "member@gmail.com",
-    password: "member",
+    name: "Durden",
+    email: "Durdy@gmail.com",
+    password: "34873akjhfk@",
   });
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await axios.post(
-      `${url}/api/auth/createuser`,
-      {
+    const response = await fetch(`${url}/api/auth/createuser`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
         name: credentials.name,
+
         email: credentials.email,
         password: credentials.password,
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-    const jsonResponse = response.data;
+      }),
+    });
+    console.log("response", response);
+    const jsonResponse = await response.json();
     console.log(jsonResponse);
     if (jsonResponse.success) {
       //save the auth token
       localStorage.setItem("token", jsonResponse.authtoken);
-      navigate("/home");
+      navigate("/");
     } else {
       alert("Invalid credentials");
     }
@@ -45,10 +45,10 @@ const SignUp = () => {
 
   return (
     <>
-      <div className="">
+      <div className=" flex flex-col justify-center items-center">
         <div
-          className="m-20 backdrop-blur-lg  p-3 lg:p-9 shadow-lg shadow-black rounded-xl text-xs md:text-lg"
-          style={{ backgroundColor: "#3F4E4F" }}
+          className="m-20 backdrop-blur-lg  p-3 lg:p-9 shadow-lg shadow-black rounded-xl text-xs md:text-lg  border-r-2 border-gray-700 w-fit flex flex-col "
+          // style={{ backgroundColor: "#3F4E4F" }}
         >
           <h1 className="text-3xl text-center text-white ">SignUp</h1>
           <form className="  flex flex-col  " onSubmit={handleSubmit}>
@@ -82,7 +82,7 @@ const SignUp = () => {
             </label>
 
             <input
-              type="text"
+              type="password"
               id="password"
               name="password"
               onChange={handleChange}

@@ -8,15 +8,15 @@ import { url } from "../config/config";
 
 const SignIn = () => {
   const [credentials, setCredentials] = useState({
-    email: "member@gmail.com",
-    password: "member",
+    email: "Durdy@gmail.com",
+    password: "34873akjhfk@",
   });
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     // const url = "http://127.0.0.1:5000";
-    const response = await fetch(url + "/api/auth/login", {
+    const response = await fetch(`${url}/api/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -26,12 +26,13 @@ const SignIn = () => {
         password: credentials.password,
       }),
     });
+    console.log("response: ", response);
     const jsonResponse = await response.json();
     console.log(jsonResponse);
     if (jsonResponse.success) {
       //save the auth token
       localStorage.setItem("token", jsonResponse.authtoken);
-      navigate("/home");
+      navigate("/");
 
       console.log("why there is  /home");
     } else {
@@ -46,15 +47,12 @@ const SignIn = () => {
   return (
     <>
       <div
-        className="flex flex-col"
+        className="flex flex-col "
         style={{
           minHeight: "100vh",
         }}
       >
-        <div
-          className=" m-auto backdrop-blur-lg   p-9 rounded-xl shadow-lg shadow-black"
-          style={{ backgroundColor: "#3F4E4F" }}
-        >
+        <div className=" m-auto backdrop-blur-lg   p-9 rounded-xl shadow-lg shadow-black border-r-2 border-gray-700">
           <h1 className="text-3xl font-bold text-white text-center">Login</h1>
           <form className="  flex flex-col " onSubmit={handleSubmit}>
             <label htmlFor="email" className="text-white font-semibold my-5">
@@ -91,7 +89,7 @@ const SignIn = () => {
             <h1 className="text-white">
               Don't have an account? Signup by clicking{" "}
               <span className="bg-white text-black font-semibold p-1 rounded-full px-3">
-                <Link to="/">SignUp</Link>
+                <Link to="/signup">SignUp</Link>
               </span>
             </h1>
           </form>

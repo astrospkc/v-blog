@@ -1,19 +1,16 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import Card from "./Card";
-import Category from "./Category";
-// import NoteCard from "./NoteCard";
-import { BsFillNodePlusFill } from "react-icons/bs";
+
 import { NoteContext } from "../context/NoteState";
 import { Link } from "react-router-dom";
-import AddBlog from "./AddBlog";
+
 import { useNavigate } from "react-router-dom";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
 
 const Blog = (props) => {
   const navigate = useNavigate();
 
   const { getNotes, editNote, notes } = useContext(NoteContext);
+  console.log("notes: ", notes);
 
   const [note, setNote] = useState({ _id: " ", etitle: "", edescription: "" });
 
@@ -31,12 +28,14 @@ const Blog = (props) => {
   };
 
   useEffect(() => {
+    console.log("token:", localStorage.getItem("token"));
     if (localStorage.getItem("token")) {
       getNotes();
     } else {
       navigate("/signIn");
     }
   }, []);
+  console.log("notes: ", notes);
 
   return (
     <>
@@ -59,27 +58,21 @@ const Blog = (props) => {
                 </div>
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-8 py-3 my-5 md:mx-20">
-                  {notes &&
-                    notes.map((e) => {
-                      return (
-                        <Card
-                          key={e._id}
-                          note={e}
-                          updateNote={updateNote}
-                          handlechange={handleChange}
-                          editnote={editNote}
-                        />
-                      );
-                    })}
-                  {/* <Card /> */}
+                  {notes.map((e) => {
+                    return (
+                      <Card
+                        key={e._id}
+                        note={e}
+                        updateNote={updateNote}
+                        handlechange={handleChange}
+                        editnote={editNote}
+                      />
+                    );
+                  })}
                 </div>
               )}
             </div>
           </div>
-        </div>
-
-        <div className=" mt-32">
-          <Footer />
         </div>
       </div>
     </>

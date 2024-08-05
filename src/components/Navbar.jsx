@@ -24,8 +24,8 @@ const Navbar = () => {
       <div className="flex flex-col z-10">
         <div className="  text-center ">
           <div className="m-3 p-2 font-extrabold text-xs md:text-xl text-cyan-800 bg-white rounded-full ">
-            <Link to="/home">
-              <i className="fa-solid fa-blog"></i> V-Blog
+            <Link to="/">
+              <i className="fa-solid fa-blog">V-Blog</i>
             </Link>
           </div>
         </div>
@@ -58,7 +58,7 @@ const Navbar = () => {
               }
             >
               <li className="  text-sm  hover:text-yellow-300 md:text-xl text-white mb-3 md:shadow-md md:shadow-black rounded-lg px-2">
-                <Link to="/home">Home</Link>
+                <Link to="/">Home</Link>
               </li>
               <li className=" text-white text-sm  hover:text-yellow-300 md:text-xl mb-3  md:shadow-md md:shadow-black rounded-lg px-2">
                 <Link to="/about">About</Link>
@@ -80,10 +80,10 @@ const Navbar = () => {
                   {!localStorage.getItem("token") ? (
                     <div className="flex flex-col md:flex-col">
                       <li className="  text-white text-sm  hover:text-yellow-300 md:text-xl mb-3 md:shadow-md md:shadow-black rounded-lg px-2 md:mb-12 ">
-                        <Link to="/">Login</Link>
+                        <Link to="/start">Login</Link>
                       </li>
                       <li className="  text-white text-sm  hover:text-yellow-300 md:text-xl mb-3 md:shadow-md md:shadow-black rounded-lg px-2 ">
-                        <Link to="/">SignUp</Link>
+                        <Link to="/start">SignUp</Link>
                       </li>
                     </div>
                   ) : (

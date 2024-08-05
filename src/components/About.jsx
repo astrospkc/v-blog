@@ -26,8 +26,7 @@ const About = () => {
         <p>The main use is that a person can</p> */}
         </div>
       </div>
-      ;
-      <Footer />
+      ;{/* <Footer /> */}
     </>
   );
 };

@@ -13,7 +13,7 @@ import { Route, Routes } from "react-router-dom";
 const StartPage = () => {
   return (
     <>
-      <div className="flex flex-col  md:flex-row ">
+      <div className="flex flex-col  md:flex-row  bg-gradient-to-r from-green-950 to-cyan-900">
         <div className="container flex flex-col w-full md:w-[50%] md:border-r-2 shadow-lg shadow-black">
           <img
             src={forest}

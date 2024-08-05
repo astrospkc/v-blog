@@ -18,26 +18,26 @@ const Card = (props) => {
   return (
     <>
       {/* <AddBlog /> */}
-      <div className="bg-transparent  rounded-md relative hover:cursor-pointer ">
+      <div className="rounded-md relative hover:cursor-pointer bg-gradient-to-r from-violet-950 to-black">
         <div className="flex flex-col   w-full ">
           {/* left section  */}
           <div
-            className=" flex flex-col shadow-lg h-fit shadow-black rounded-lg  "
-            style={{
-              // backgroundImage: `url(${white_space})`,
-              backgroundColor: "#A27B5C",
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-              minHeight: "20vh ",
-              backdropFilter: blur(),
-            }}
+            className=" flex flex-col shadow-lg h-fit shadow-black rounded-lg bg-gradient-to-r from-violet-950 to-black "
+            // style={{
+            //   // backgroundImage: `url(${white_space})`,
+            //   // backgroundColor: "#A27B5C",
+            //   backgroundSize: "cover",
+            //   backgroundRepeat: "no-repeat",
+            //   backgroundPosition: "center",
+            //   minHeight: "20vh ",
+            //   backdropFilter: blur(),
+            // }}
           >
-            <div className=" mx-5 my-5 p-3 flex flex-col items-center justify-center ">
+            <div className=" mx-5 my-5 p-3 flex flex-col items-center justify-center  ">
               <div className="">
                 <h1
                   // style={{ fontFamily: "Ubuntu" }}
-                  className="singleline text-3xl   font-semibold font-serif mb-3 cursor-pointer text-black"
+                  className="singleline text-3xl   font-semibold font-serif mb-3 cursor-pointer text-gray-400 border-b-2 border-gray-500"
                 >
                   {note.title}
                 </h1>
@@ -52,8 +52,7 @@ const Card = (props) => {
                   onClick={() => {
                     updatenote(note);
                   }}
-                  style={{ backgroundColor: "#3F4E4F", color: "white" }}
-                  className="p-1 rounded-xl mt-3"
+                  className="p-1 rounded-xl mt-3 bg-black text-white hover:bg-gray-700"
                 >
                   <Link to="/blog/read" state={{ note }}>
                     read more
@@ -63,7 +62,7 @@ const Card = (props) => {
 
               <div className="flex flex-row gap-3 mt-4 text-[20px] items-center ">
                 <FiTrash2
-                  className="  text-[#1a3339] hover:cursor-pointer hover:text-[#9fa2b2]"
+                  className="  text-white hover:cursor-pointer hover:text-[#9fa2b2]"
                   onClick={() => {
                     deleteNote(note._id);
                   }}

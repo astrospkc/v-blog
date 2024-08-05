@@ -9,18 +9,21 @@ const NoteState = (props) => {
   //get notes in homepage , login not required:
   const getAllNotes = async () => {
     try {
+      console.log(url);
       const response = await fetch(`${url}/api/notes/getalldata`, {
         method: "GET",
+
         headers: {
           "Content-Type": "application/json",
         },
       });
       // const jsonResponse = await response.data;
       const jsonResponse = await response.json();
-      // console.log("jsonresponse", jsonResponse);
+      console.log("jsonresponse", jsonResponse);
       setNotes(jsonResponse);
     } catch (error) {
-      // console.log(error);
+      console.log(error);
+      return error;
     }
   };
 
@@ -28,18 +31,21 @@ const NoteState = (props) => {
 
   const getNotes = async () => {
     try {
-      // console.log("token : ", localStorage.getItem("token"));
+      console.log("token : ", localStorage.getItem("token"));
+      const token = localStorage.getItem("token");
       const response = await fetch(`${url}/api/notes/fetchdata`, {
         method: "GET",
+
         headers: {
           "Content-Type": "application/json",
-          authtoken: localStorage.getItem("token"),
+          Authorization: `Bearer ${token}`,
         },
       });
       // const jsonResponse = await response.data;
+      console.log("response ", response);
       const jsonResponse = await response.json();
-      // console.log("jsonresponse", jsonResponse);
-      setNotes(jsonResponse);
+      console.log("jsonresponse", jsonResponse);
+      setNotes(Array.isArray(jsonResponse) ? jsonResponse : []);
     } catch (error) {
       console.log("Error occured while fetching notes", error);
     }
@@ -50,18 +56,21 @@ const NoteState = (props) => {
   const addNote = async (title, description) => {
     try {
       const token = localStorage.getItem("token");
-      // console.log({ token });
+      console.log({ token });
+      console.log("title: ", title, "description: ", description);
       const response = await fetch(`${url}/api/notes/addnotes`, {
         method: "POST",
 
         headers: {
           "Content-Type": "application/json",
-          authtoken: token,
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({ title, description }),
       });
+      console.log("response: ", response);
 
       const note = await response.json();
+      console.log("note: ", note);
 
       setNotes(notes.concat(note));
       // console.log(title, description);
@@ -74,11 +83,13 @@ const NoteState = (props) => {
 
   const deleteNote = async (id) => {
     try {
+      const token = localStorage.getItem("token");
       const response = await fetch(`${url}/api/notes/deletenote/${id}`, {
         method: "DELETE",
+
         headers: {
           "Content-Type": "application/json",
-          authtoken: localStorage.getItem("token"),
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(),
       });
@@ -100,11 +111,13 @@ const NoteState = (props) => {
 
   const editNote = async (id, title, description) => {
     try {
+      const token = localStorage.getItem("token");
       const response = await fetch(`${url}/api/notes/updatenotes/${id}`, {
         method: "PUT",
+
         headers: {
           "Content-Type": "application/json",
-          authtoken: localStorage.getItem("token"),
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({ title, description }),
       });

@@ -11,8 +11,9 @@ import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const { getAllNotes, notes } = useContext(NoteContext);
-  // console.log("notes length", notes.length);
-  // console.log({ notes });
+  // console.log("getAllNotes:", getAllNotes());
+  console.log("notes length", notes.length);
+  console.log({ notes });
 
   const [note, setNote] = useState({ title: "", description: "" });
 
@@ -36,50 +37,35 @@ const HomePage = () => {
     getAllNotes();
   }, []);
 
-  // // show modal only
-  // const [showOnlyModal, setShowOnlyModal] = useState(false);
-  // // console.log("try", setShowOnlyModal());
-  // const closeOnlyModal = () => {
-  //   setShowOnlyModal(false);
-  // };
-
-  // useEffect(() => {
-  //   console.log("showOnlyModal", showOnlyModal);
-  // }, [showOnlyModal]);
-
-  // for search
-
-  // targetRef
-
   return (
     <>
-      <div>
+      <div className="h-full w-full flex flex-col justify-center items-center ">
         {/* <div className="flex flex-row"> */}
-        <div className="flex flex-col md:ml-16  ">
+        <div className="flex flex-col   ">
           {/* blurred section */}
 
           <div
-            className=" m-auto w-full p-9"
-            style={{
-              backgroundImage: `url(${Image})`,
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
+            className=" m-auto w-fit p-9 rounded-3xl shadow-lg shadow-gray-700  bg-gradient-to-r from-black to-gray-600"
+            // style={{
+            //   backgroundImage: `url(${Image})`,
+            //   backgroundPosition: "center",
+            //   backgroundRepeat: "no-repeat",
+            //   backgroundSize: "cover",
+            // }}
           >
-            <div className="backdrop-blur-md p-2">
+            <div className="backdrop-blur-md p-2 ">
               <h1
                 className="textfont text-center font-bold text-2xl md:text-5xl mb-20"
                 style={{ color: "#A27B5C" }}
               >
                 Lets write something better
               </h1>
-              <p className="text-black font-semibold text-left m-auto mb-2">
+              <p className="text-cyan-400 font-semibold m-auto mb-2 text-xl text-center ">
                 Write your thoughts
               </p>
               <p
                 style={{ fontFamily: "Ubuntu" }}
-                className="text-white font-semibold mb-4"
+                className="text-white font-semibold mb-4 text-center"
               >
                 Be Creative...
               </p>
@@ -88,7 +74,6 @@ const HomePage = () => {
             </div>
           </div>
 
-          {/* start of the added notes */}
           <div className="flex justify-center items-center">
             <div className="">
               {notes && notes.length === 0 ? (
@@ -103,19 +88,18 @@ const HomePage = () => {
                         <HomeCard
                           key={note._id}
                           note={note}
-                          // setShowOnlyModal={setShowOnlyModal}
                           updateNote={updateNote}
                         />
                       );
                     })}
-                  {/* <Card /> */}
                 </div>
               )}
             </div>
           </div>
         </div>
-
-        <Footer />
+        {/* <div className="flex bottom-0">
+          <Footer />
+        </div> */}
       </div>
     </>
   );

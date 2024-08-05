@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className=" text-center mt-auto">
+    <footer className=" flex  flex-col justify-center items-center ">
       <ul
         className="py-3  gap-6 ml-2 cursor-pointer md:flex md:justify-center text:lg md:text-2xl text-[#16262e] "
         style={{ color: "#A27B5C" }}
