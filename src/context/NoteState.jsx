@@ -9,7 +9,7 @@ const NoteState = (props) => {
   //get notes in homepage , login not required:
   const getAllNotes = async () => {
     try {
-      console.log(url);
+      //console.log(url);
       const response = await fetch(`${url}/api/notes/getalldata`, {
         method: "GET",
 
@@ -19,10 +19,10 @@ const NoteState = (props) => {
       });
       // const jsonResponse = await response.data;
       const jsonResponse = await response.json();
-      console.log("jsonresponse", jsonResponse);
+      //console.log("jsonresponse", jsonResponse);
       setNotes(jsonResponse);
     } catch (error) {
-      console.log(error);
+      //console.log(error);
       return error;
     }
   };
@@ -31,7 +31,7 @@ const NoteState = (props) => {
 
   const getNotes = async () => {
     try {
-      console.log("token : ", localStorage.getItem("token"));
+      //console.log("token : ", localStorage.getItem("token"));
       const token = localStorage.getItem("token");
       const response = await fetch(`${url}/api/notes/fetchdata`, {
         method: "GET",
@@ -42,12 +42,12 @@ const NoteState = (props) => {
         },
       });
       // const jsonResponse = await response.data;
-      console.log("response ", response);
+      //console.log("response ", response);
       const jsonResponse = await response.json();
-      console.log("jsonresponse", jsonResponse);
+      //console.log("jsonresponse", jsonResponse);
       setNotes(Array.isArray(jsonResponse) ? jsonResponse : []);
     } catch (error) {
-      console.log("Error occured while fetching notes", error);
+      //console.log("Error occured while fetching notes", error);
     }
   };
 
@@ -56,8 +56,8 @@ const NoteState = (props) => {
   const addNote = async (title, description) => {
     try {
       const token = localStorage.getItem("token");
-      console.log("token in addblog: ", token);
-      console.log("title: ", title, "description: ", description);
+      //console.log("token in addblog: ", token);
+      //console.log("title: ", title, "description: ", description);
       const response = await fetch(`${url}/api/notes/addnotes`, {
         method: "POST",
 
@@ -67,15 +67,15 @@ const NoteState = (props) => {
         },
         body: JSON.stringify({ title: title, description: description }),
       });
-      console.log("response: ", response);
+      //console.log("response: ", response);
 
       const note = await response.json();
-      console.log("note: ", note);
+      //console.log("note: ", note);
       // setNotes([note, ...notes]);
       setNotes(notes.concat(note));
-      // console.log(title, description);
+      // //console.log(title, description);
     } catch (error) {
-      console.log(error);
+      //console.log(error);
     }
   };
 
@@ -95,15 +95,15 @@ const NoteState = (props) => {
       });
 
       const jsonResponse = await response.json();
-      // console.log(jsonResponse);
+      // //console.log(jsonResponse);
       const newNotes = notes.filter((note) => {
         return note._id !== id;
       });
 
-      // console.log("notes after deletion", newNotes);
+      // //console.log("notes after deletion", newNotes);
       setNotes(newNotes);
     } catch (error) {
-      console.log(error);
+      //console.log(error);
     }
   };
 
@@ -123,7 +123,7 @@ const NoteState = (props) => {
       });
 
       const jsonResponse = await response.json();
-      // console.log({ jsonResponse });
+      // //console.log({ jsonResponse });
 
       const newNotes = notes.map((note) => {
         if (note._id === id) {
@@ -133,9 +133,9 @@ const NoteState = (props) => {
         return note;
       });
       setNotes(newNotes);
-      // console.log("newNotes:after editing:", newNotes);
+      // //console.log("newNotes:after editing:", newNotes);
     } catch (error) {
-      console.log(error);
+      //console.log(error);
     }
   };
   return (
