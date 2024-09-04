@@ -46,8 +46,8 @@ const NoteState = (props) => {
       //console.log("response ", response);
       const note = await response.json();
       //console.log("jsonresponse", jsonResponse);
-      // setNotes(Array.isArray(note) ? note : []);
-      setNotes([note, ...notes]);
+      setNotes(Array.isArray(note) ? note : []);
+      // setNotes([note, ...notes]);
       // setUserNotes(userNotes.concate(note))
     } catch (error) {
       //console.log("Error occured while fetching notes", error);
@@ -74,8 +74,8 @@ const NoteState = (props) => {
 
       const note = await response.json();
       //console.log("note: ", note);
-      // setNotes([note, ...notes]);
-      setNotes(notes.concat(note));
+      setNotes([note, ...notes]);
+      // setNotes(notes.concat(note));
       // //console.log(title, description);
     } catch (error) {
       //console.log(error);
