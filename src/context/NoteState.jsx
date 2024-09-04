@@ -5,6 +5,7 @@ import { url } from "../config/config";
 const NoteContext = createContext(null);
 const NoteState = (props) => {
   const [notes, setNotes] = useState([]);
+  // const [userNotes, setUserNotes] = useState([])
 
   //get notes in homepage , login not required:
   const getAllNotes = async () => {
@@ -43,9 +44,11 @@ const NoteState = (props) => {
       });
       // const jsonResponse = await response.data;
       //console.log("response ", response);
-      const jsonResponse = await response.json();
+      const note = await response.json();
       //console.log("jsonresponse", jsonResponse);
-      setNotes(Array.isArray(jsonResponse) ? jsonResponse : []);
+      // setNotes(Array.isArray(note) ? note : []);
+      setNotes([note, ...notes]);
+      // setUserNotes(userNotes.concate(note))
     } catch (error) {
       //console.log("Error occured while fetching notes", error);
     }

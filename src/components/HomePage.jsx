@@ -77,7 +77,7 @@ const HomePage = () => {
           <div className="flex justify-center items-center">
             <div className="">
               {notes && notes.length === 0 ? (
-                <div className="relative text-white text-center bg-orange-200 p-3 rounded-3xl">
+                <div className="relative text-black text-center bg-orange-200 p-3 rounded-3xl">
                   <h1>Wait for sometime</h1>
                   <div>Just a little wait for your blogs</div>
                 </div>
