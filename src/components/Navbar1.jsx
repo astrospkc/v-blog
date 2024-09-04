@@ -1,91 +1,14 @@
-// import React, { useState, useEffect } from "react";
-// import "../App.css";
-// import { Link } from "react-router-dom";
-// import { BsList } from "react-icons/bs";
-// import { BsXLg } from "react-icons/bs";
-
-// import { useNavigate } from "react-router-dom";
-// const Navbar1 = () => {
-//   const [toggleMenu, setToggleMenu] = useState(false);
-//   const navigate = useNavigate();
-
-//   function handleToggle() {
-//     // console.log("ToggleMenu");
-//     setToggleMenu((prev) => !prev);
-//   }
-
-//   const handleLogOut = () => {
-//     localStorage.removeItem("token");
-//     navigate("/signin");
-//   };
-
-//   return (
-//     <>
-//       <div className="flex flex-col md:flex-row justify-evenly">
-//         <button>click</button>
-//         <ul
-//           className={
-//             toggleMenu
-//               ? " md:min-h-0  left-0  md:flex md:flex-col  md:items-center  md:gap-10 px-2 bg-black md:bg-transparent rounded-lg"
-//               : "hidden " +
-//                 "  md:min-h-0  left-0   md:flex md:flex-row md:items-center  md:gap-10  px-2 bg-black md:bg-transparent "
-//           }
-//         >
-//           {/* <ul className="flex flex-row "> */}
-//           <li className="  text-sm  hover:text-yellow-300 md:text-xl text-white mb-3 md:shadow-md md:shadow-black rounded-lg px-2 h-fit">
-//             <Link to="/">Home</Link>
-//           </li>
-//           <li className=" text-white text-sm  hover:text-yellow-300 md:text-xl mb-3  md:shadow-md md:shadow-black rounded-lg px-2 h-fit">
-//             <Link to="/about">About</Link>
-//           </li>
-//           <li className=" text-white text-sm  hover:text-yellow-300 md:text-xl mb-3 md:shadow-md md:shadow-black rounded-lg px-2 h-fit">
-//             <Link to="/blog">My Blog</Link>
-//           </li>
-
-//           <li className="text-white text-sm  hover:text-yellow-300 md:text-xl mb-3 md:shadow-md md:shadow-black rounded-lg px-2 h-fit">
-//             <Link to="/blog/add"> AddBlog</Link>
-//           </li>
-
-//           {!localStorage.getItem("token") ? (
-//             // <div className="flex flex-col md:flex-row w-fit">
-//             <li>
-//               <li className="  text-white text-sm  hover:text-yellow-300 md:text-xl mb-3 md:shadow-md md:shadow-black rounded-lg px-2 md:mb-12 ">
-//                 <Link to="/signIn">Login</Link>
-//               </li>
-//               <li className="  text-white text-sm  hover:text-yellow-300 md:text-xl mb-3 md:shadow-md md:shadow-black rounded-lg px-2 md:mb-12 ">
-//                 <Link to="/signUp">SignUp</Link>
-//               </li>
-//             </li>
-//           ) : (
-//             // <div className="flex flex-col md:flex-row w-fit">
-//             <li
-//               onClick={handleLogOut}
-//               className="  text-white text-sm  hover:text-yellow-300 md:text-xl md:shadow-md md:shadow-black rounded-lg px-2 hover:cursor-pointer"
-//             >
-//               Logout
-//             </li>
-//             // </div>
-//           )}
-//         </ul>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Navbar1;
-// // BsPaletteFill
-
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { BsList } from "react-icons/bs";
 import { BsXLg } from "react-icons/bs";
-import { BsEyeFill } from "react-icons/bs";
-import { BsKeyFill } from "react-icons/bs";
-import { BsSendFill } from "react-icons/bs";
-import { BsPersonCircle } from "react-icons/bs";
-import { BsHouseDoorFill } from "react-icons/bs";
-import { BsFillPenFill } from "react-icons/bs";
-import { BsFillPaletteFill } from "react-icons/bs";
+// import { BsEyeFill } from "react-icons/bs";
+// import { BsKeyFill } from "react-icons/bs";
+// import { BsSendFill } from "react-icons/bs";
+// import { BsPersonCircle } from "react-icons/bs";
+// import { BsHouseDoorFill } from "react-icons/bs";
+// import { BsFillPenFill } from "react-icons/bs";
+// import { BsFillPaletteFill } from "react-icons/bs";
 
 const Navbar1 = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -184,10 +107,9 @@ const Navbar1 = () => {
                 </>
               ) : (
                 <li
-                  className="flex flex-row m-4  text-white md:text-white font-bold px-3 md:border-b-0 border-gray-800 hover:text-yellow-500"
+                  className="flex flex-row m-4  text-white md:text-white font-bold px-3 md:border-b-0 border-gray-800 hover:text-yellow-500 hover:cursor-pointer"
                   onClick={handleLogOut}
                 >
-                  {/* {i.icon} */}
                   Logout
                 </li>
               )}
@@ -223,7 +145,7 @@ const Navbar1 = () => {
                 </>
               ) : (
                 <li
-                  className="flex flex-row m-4  text-white md:text-white font-bold px-3 md:border-b-0 border-gray-800 hover:text-yellow-500"
+                  className="flex flex-row m-4  text-white hover:cursor-pointer md:text-white font-bold px-3 md:border-b-0 border-gray-800 hover:text-yellow-500"
                   onClick={handleLogOut}
                 >
                   {/* {i.icon} */}

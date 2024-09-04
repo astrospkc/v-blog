@@ -12,14 +12,14 @@ const ReadBlog = () => {
   return (
     <>
       <div
-        className="flex justify-center items-center py-10 mx-10 m-auto border-t-2 border-gray-400 rounded-3xl w-fit  "
+        className="flex justify-center items-center py-10 mx-10 m-auto border-t-2 border-gray-400  w-full  "
         style={{ color: "#A27B5C" }}
       >
-        <div className="flex flex-col">
+        <div className="flex flex-col w-fit  ">
           <h1 className="text-center font-bold text-white text-xl">
             Let's read
           </h1>
-          <div className="shadow-lg shadow-gray-800 p-10">
+          <div className="shadow-lg shadow-gray-800 p-10 rounded-2xl border-x-2 border-orange-200">
             <h1 className="  items-center mx-auto text-xl font-bold mb-4 bg-orange-200 rounded-full w-fit px-4">
               {data.note.title.toUpperCase()}
             </h1>
@@ -27,13 +27,13 @@ const ReadBlog = () => {
               {data.note.description}
             </p>
           </div>
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center my-6 ">
             {currentPath == "/home/read" ? (
-              <button className="text-center text-lg font-bold mb-4 bg-orange-200 rounded-full px-2">
+              <button className="text-center text-lg font-bold mb-4 bg-orange-200 rounded-full px-2 hover:scale-100 ">
                 <Link to="/home">Go Back</Link>
               </button>
             ) : (
-              <button className="text-center text-lg font-bold mb-4 bg-orange-200 rounded-full px-2">
+              <button className="text-center text-lg font-bold mb-4 bg-orange-200 rounded-full px-2 hover:scale-110 ">
                 <Link to="/">Go Back</Link>
               </button>
             )}

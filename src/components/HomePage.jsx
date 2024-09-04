@@ -45,7 +45,7 @@ const HomePage = () => {
           {/* blurred section */}
 
           <div
-            className=" m-auto w-fit p-9 rounded-3xl shadow-lg shadow-gray-700  bg-gradient-to-r from-black to-gray-600"
+            className=" m-auto w-fit p-9 rounded-3xl shadow-lg shadow-gray-700 mt-8 mb-8"
             // style={{
             //   backgroundImage: `url(${Image})`,
             //   backgroundPosition: "center",
@@ -77,11 +77,12 @@ const HomePage = () => {
           <div className="flex justify-center items-center">
             <div className="">
               {notes && notes.length === 0 ? (
-                <div className="relative text-white text-center">
-                  No notes to display
+                <div className="relative text-white text-center bg-orange-200 p-3 rounded-3xl">
+                  <h1>Wait for sometime</h1>
+                  <div>Just a little wait for your blogs</div>
                 </div>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-8 py-3 justify-center items-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-8 py-3 justify-center items-center mx-5 ">
                   {notes &&
                     notes.map((note) => {
                       return (

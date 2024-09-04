@@ -56,7 +56,7 @@ const NoteState = (props) => {
   const addNote = async (title, description) => {
     try {
       const token = localStorage.getItem("token");
-      console.log({ token });
+      console.log("token in addblog: ", token);
       console.log("title: ", title, "description: ", description);
       const response = await fetch(`${url}/api/notes/addnotes`, {
         method: "POST",
@@ -65,13 +65,13 @@ const NoteState = (props) => {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify({ title, description }),
+        body: JSON.stringify({ title: title, description: description }),
       });
       console.log("response: ", response);
 
       const note = await response.json();
       console.log("note: ", note);
-
+      // setNotes([note, ...notes]);
       setNotes(notes.concat(note));
       // console.log(title, description);
     } catch (error) {

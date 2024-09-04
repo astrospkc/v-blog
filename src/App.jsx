@@ -26,7 +26,7 @@ const App = () => {
         {/* <Routes>
           <Route path="/start" element={<StartPage />} />
         </Routes> */}
-        <div className="flex flex-col bg-gradient-to-r from-indigo-950 to-black min-h-screen">
+        <div className="flex flex-col bg-gray-950 min-h-screen">
           <div className="flex-none top-0 h-fit w-full">
             <Navbar1 />
           </div>
@@ -43,7 +43,7 @@ const App = () => {
               <Route path="/blog/add" element={<AddBlog />} />
             </Routes>
           </div>
-          <div className="flex bottom-0 h-fit justify-center items-center bg-black shadow-lg shadow-gray-700">
+          <div className="flex bottom-0 h-fit justify-center items-center border-t-2 border-gray-700 shadow-lg shadow-gray-700">
             <Footer />
           </div>
         </div>

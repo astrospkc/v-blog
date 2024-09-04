@@ -12,7 +12,7 @@ const HomeCard = (props) => {
         <div className="flex flex-col   w-full ">
           {/* left section  */}
           <div
-            className="flex flex-col rounded-xl shadow-md shadow-gray-600 hover:shadow-lg  hover:shadow-black bg-gradient-to-r from-violet-950 to-black border-t-2 border-white hover:bg-gradient-to-r hover:from-black hover:to-pink-950 "
+            className="flex flex-col rounded-xl shadow-md shadow-gray-600 hover:shadow-lg  hover:shadow-black bg-gradient-to-r from-gray-800 to-orange-200 border-t-2 border-white hover:bg-gradient-to-r hover:from-gray-700 hover:to-neutral-700 scale-90 hover:scale-100 "
             // style={{
             //   // backgroundImage: `url(${white_space})`,
             //   backgroundSize: "cover",
@@ -26,14 +26,14 @@ const HomeCard = (props) => {
               <div className="">
                 <h1
                   style={{ fontFamily: "Ubuntu" }}
-                  className="singleline text-2xl font-bold mb-3 mx-4  overflow-hidden text-gray-300"
+                  className="singleline text-2xl font-bold mb-3 mx-4 border-b-2 border-gray-600 overflow-hidden text-gray-950"
                 >
                   {note.title}
                 </h1>
               </div>
               <hr className="border-slate-700" />
               <div className=" ">
-                <p className="multiline desc text-gray-400 overflow-ellipsis overflow-hidden">
+                <p className="multiline desc text-gray-900  font-semibold overflow-ellipsis overflow-hidden">
                   {note.description}
                 </p>
 
