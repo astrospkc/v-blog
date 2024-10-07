@@ -3,6 +3,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Dosis:wght@500&family=Geologica:wght@300&family=Josefin+Sans&family=Nunito&family=Poltawski+Nowy&family=Roboto+Mono&family=Vina+Sans&family=Ysabeau:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Black+Ops+One&family=Dosis:wght@500&family=Geologica:wght@300&family=Josefin+Sans&family=Nunito&family=Poltawski+Nowy&family=Roboto+Mono&family=Vina+Sans&family=Ysabeau:wght@300&display=swap");
 
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Protest+Strike&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -63,4 +67,49 @@
     -webkit-line-clamp: 3;
     overflow: hidden;
   }
+  
+}
+
+.kanit-black {
+  font-family: "Kanit", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 153px;
+}
+
+.kanith-small {
+  font-family: "Kanit", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 50px;
+}
+
+.indie-flower-regular {
+  font-family: "Indie Flower", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size:30px
+}
+.protest-strike-regular {
+  font-family: "Protest Strike", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 50px;
+}
+
+.josefin-san {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size:20px
+}
+
+@media screen and (max-width: 600px) {
+  .kanit-black {
+  font-family: "Kanit", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 53px;
+}
 }

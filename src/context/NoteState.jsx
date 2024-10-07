@@ -45,6 +45,7 @@ const NoteState = (props) => {
       // const jsonResponse = await response.data;
       //console.log("response ", response);
       const note = await response.json();
+      console.log("user note: ", note);
       //console.log("jsonresponse", jsonResponse);
       setNotes(Array.isArray(note) ? note : []);
       // setNotes([note, ...notes]);

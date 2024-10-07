@@ -8,6 +8,7 @@ import { url } from "../config/config";
 import Search from "./Search";
 
 import { Link } from "react-router-dom";
+import { Input } from "@chakra-ui/react";
 
 const HomePage = () => {
   const { getAllNotes, notes } = useContext(NoteContext);
@@ -41,36 +42,20 @@ const HomePage = () => {
     <>
       <div className="h-full w-full flex flex-col justify-center items-center ">
         {/* <div className="flex flex-row"> */}
-        <div className="flex flex-col   ">
+        <div className="flex flex-col w-full  ">
           {/* blurred section */}
 
-          <div
-            className=" m-auto w-fit p-9 rounded-3xl shadow-lg shadow-gray-700 mt-8 mb-8"
-            // style={{
-            //   backgroundImage: `url(${Image})`,
-            //   backgroundPosition: "center",
-            //   backgroundRepeat: "no-repeat",
-            //   backgroundSize: "cover",
-            // }}
-          >
-            <div className="backdrop-blur-md p-2 ">
-              <h1
-                className="textfont text-center font-bold text-2xl md:text-5xl mb-20"
-                style={{ color: "#A27B5C" }}
-              >
-                Lets write something better
-              </h1>
-              <p className="text-cyan-400 font-semibold m-auto mb-2 text-xl text-center ">
-                Write your thoughts
-              </p>
-              <p
-                style={{ fontFamily: "Ubuntu" }}
-                className="text-white font-semibold mb-4 text-center"
-              >
-                Be Creative...
-              </p>
-
-              {/* <Search title={note.title} /> */}
+          <div className=" m-auto w-1/2 p-9 rounded-3xl  mt-8 mb-8">
+            <Input placeholder="Search ...." />
+          </div>
+          <div className="flex flex-col md:flex-row justify-center items-center gap-28 mx-20  ">
+            <div className="kanit-black text-5xl text-yellow-50 flex flex-col text-center">
+              <span>Blog</span>
+              <span>The</span>
+              <span>Way</span>
+            </div>
+            <div className="text-center text-yellow-200 opacity-70 indie-flower-regular shadow-sm shadow-yellow-50 p-5 w-fit">
+              "The Beauty lies in the writings."
             </div>
           </div>
 
@@ -82,14 +67,15 @@ const HomePage = () => {
                   <div>Just a little wait for your blogs</div>
                 </div>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-8 py-3 justify-center items-center mx-5 ">
+                <div className="grid grid-cols-1 gap-4 gap-y-20 py-3 justify-center items-center mx-5 ">
                   {notes &&
-                    notes.map((note) => {
+                    notes.map((note, index) => {
                       return (
                         <HomeCard
                           key={note._id}
                           note={note}
                           updateNote={updateNote}
+                          ind={index}
                         />
                       );
                     })}

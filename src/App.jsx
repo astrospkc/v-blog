@@ -16,39 +16,42 @@ import ReadBlog from "./components/ReadBlog";
 
 import EditSection from "./components/EditSection";
 import Navbar1 from "./components/Navbar1";
+import { ChakraProvider } from "@chakra-ui/react";
 
 const App = () => {
   // const location = useLocation();
 
   return (
-    <NoteState>
-      <BrowserRouter>
-        {/* <Routes>
+    <ChakraProvider>
+      <NoteState>
+        <BrowserRouter>
+          {/* <Routes>
           <Route path="/start" element={<StartPage />} />
         </Routes> */}
-        <div className="flex flex-col bg-gray-950 min-h-screen">
-          <div className="flex-none top-0 h-fit w-full">
-            <Navbar1 />
+          <div className="flex flex-col bg-gray-950 min-h-screen">
+            <div className="flex-none top-0 h-fit w-full">
+              <Navbar1 />
+            </div>
+            <div className="flex-grow">
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/read" element={<ReadBlog />} />
+                <Route path="/read" element={<ReadBlog />} />
+                <Route path="/blog/edit" element={<EditSection />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/signIn" element={<SignIn />} />
+                <Route path="/signUp" element={<SignUp />} />
+                <Route path="/blog/add" element={<AddBlog />} />
+              </Routes>
+            </div>
+            <div className="flex bottom-0 h-fit justify-center items-center border-t-2 border-gray-700 shadow-lg shadow-gray-700">
+              <Footer />
+            </div>
           </div>
-          <div className="flex-grow">
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/read" element={<ReadBlog />} />
-              <Route path="/read" element={<ReadBlog />} />
-              <Route path="/blog/edit" element={<EditSection />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/signIn" element={<SignIn />} />
-              <Route path="/signUp" element={<SignUp />} />
-              <Route path="/blog/add" element={<AddBlog />} />
-            </Routes>
-          </div>
-          <div className="flex bottom-0 h-fit justify-center items-center border-t-2 border-gray-700 shadow-lg shadow-gray-700">
-            <Footer />
-          </div>
-        </div>
-      </BrowserRouter>
-    </NoteState>
+        </BrowserRouter>
+      </NoteState>
+    </ChakraProvider>
   );
 };
 
