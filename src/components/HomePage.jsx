@@ -45,9 +45,6 @@ const HomePage = () => {
         <div className="flex flex-col w-full  ">
           {/* blurred section */}
 
-          <div className=" m-auto w-1/2 p-9 rounded-3xl  mt-8 mb-8">
-            <Input placeholder="Search ...." />
-          </div>
           <div className="flex flex-col md:flex-row justify-center items-center gap-28 mx-20  ">
             <div className="kanit-black text-5xl text-yellow-50 flex flex-col text-center">
               <span>Blog</span>
@@ -57,6 +54,9 @@ const HomePage = () => {
             <div className="text-center text-yellow-200 opacity-70 indie-flower-regular shadow-sm shadow-yellow-50 p-5 w-fit">
               "The Beauty lies in the writings."
             </div>
+          </div>
+          <div className=" m-auto w-1/2 p-9 rounded-3xl  mt-8 mb-8">
+            <Input placeholder="Search ...." />
           </div>
 
           <div className="flex justify-center items-center">
