@@ -28,12 +28,13 @@ const Blog = (props) => {
   };
 
   useEffect(() => {
-    console.log("token:", localStorage.getItem("token"));
-    if (localStorage.getItem("token")) {
-      getNotes();
-    } else {
-      navigate("/signIn");
-    }
+    // console.log("token:", localStorage.getItem("token"));
+    // if (localStorage.getItem("token")) {
+    //   getNotes();
+    // } else {
+    //   navigate("/signIn");
+    // }
+    getNotes;
   }, []);
   console.log("notes: ", notes);
 

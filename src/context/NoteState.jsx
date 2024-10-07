@@ -74,15 +74,16 @@ const NoteState = (props) => {
       //console.log("response: ", response);
 
       const note = await response.json();
-      //console.log("note: ", note);
-      setNotes([note, ...notes]);
+      console.log("note: ", note);
+      // setNotes([note, ...notes]);
+      setNotes.unshift(note);
       // setNotes(notes.concat(note));
       // //console.log(title, description);
     } catch (error) {
-      //console.log(error);
+      console.log(error);
     }
   };
-
+  console.log("notes added: ", notes);
   //Delete Note
 
   const deleteNote = async (id) => {

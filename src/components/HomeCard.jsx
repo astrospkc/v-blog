@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const HomeCard = (props) => {
   const { note, ind } = props;
-  console.log("title", note.title, note._id, ind);
+  // console.log("title", note.title, note._id, ind);
 
   return (
     <>
@@ -14,13 +14,13 @@ const HomeCard = (props) => {
           <div
             className={`flex flex-col ${
               ind % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
-            } gap-20 items-center shadow-lg shadow-yellow-900 p-4 rounded-md`}
+            } gap-20 items-center  p-4 rounded-md`}
           >
-            <div className="protest-strike-regular text-yellow-700">
+            <div className="protest-strike-regular text-yellow-700 shadow-lg shadow-yellow-600 p-4 rounded-3xl">
               {note.title}
             </div>
 
-            <div className="josefin-san text-yellow-500">
+            <div className="josefin-san text-yellow-500 opacity-50">
               {note.description}
             </div>
             <button className="p-1 rounded-xl bg-yellow-800 text-white hover:bg-gray-400 hover:text-black w-fit flex  ">
@@ -29,37 +29,6 @@ const HomeCard = (props) => {
               </Link>
             </button>
           </div>
-          {/* <div
-            className="flex flex-col rounded-xl shadow-md shadow-gray-600 hover:shadow-lg  hover:shadow-black bg-gradient-to-r from-gray-800 to-orange-200 border-t-2 border-white hover:bg-gradient-to-r hover:from-gray-700 hover:to-neutral-700 scale-90 hover:scale-100 "
-          
-          >
-            <div className=" mx-5 my-5 p-3 flex flex-col  items-center justify-center ">
-              <div className="">
-                <h1
-                  style={{ fontFamily: "Ubuntu" }}
-                  className="singleline text-2xl font-bold mb-3 mx-4 border-b-2 border-gray-600 overflow-hidden text-gray-950"
-                >
-                  {note.title}
-                </h1>
-              </div>
-              <hr className="border-slate-700" />
-              <div className=" ">
-                <p className="multiline desc text-gray-900  font-semibold overflow-ellipsis overflow-hidden">
-                  {note.description}
-                </p>
-
-                <button
-                  // onClick={handleButtonClick}
-
-                  className="p-1 rounded-xl bg-black text-white hover:bg-gray-400 hover:text-black"
-                >
-                  <Link to="/read" state={{ note }}>
-                    read more
-                  </Link>
-                </button>
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     </>

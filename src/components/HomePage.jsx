@@ -56,7 +56,8 @@ const HomePage = () => {
             </div>
           </div>
           <div className=" m-auto w-1/2 p-9 rounded-3xl  mt-8 mb-8">
-            <Input placeholder="Search ...." />
+            {/* <Input placeholder="Search ...." /> */}
+            <Search />
           </div>
 
           <div className="flex justify-center items-center">
